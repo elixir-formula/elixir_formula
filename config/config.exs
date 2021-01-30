@@ -13,7 +13,7 @@ config :elixir_formula,
 # Configures the endpoint
 config :elixir_formula, ElixirFormulaWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "N5pBS/V0Kiyj0uKFjKIczM4VJb9SaHU4feW6s4z6x8KC2wkWPuofkrxCiZfpdouc",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: ElixirFormulaWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: ElixirFormula.PubSub,
   live_view: [signing_salt: "hoEF+wbG"]

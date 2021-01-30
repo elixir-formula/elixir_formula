@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  app:
+    build: .
+    image: elixir_formula_app
+    container_name: application
+    depends_on:
+      - postgres
+    env_file:
+      - .env.development
+    ports:
+      - 4000:4000
+    stdin_open: true
+    tty: true
+    command: iex -S mix phx.start
+    volumes:
+      - .:/elixir_formula:cached
+      - static:/elixir_formula/priv/static
+    tmpfs:
+      - /tmp
+
+  postgres:
+    image: postgres:11.1
+    container_name: postgres
+    ports:
+      - 5432
+    env_file:
+      - .env.development
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data: {}
+  static:
