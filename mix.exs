@@ -10,7 +10,8 @@ defmodule ElixirFormula.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      preferred_cli_env: [check: :test]
     ]
   end
 
@@ -25,7 +26,7 @@ defmodule ElixirFormula.MixProject do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:test), do: ["lib", "test/support", "test/factories"]
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -33,20 +34,34 @@ defmodule ElixirFormula.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      # phoenix
       {:phoenix, "~> 1.5.7"},
       {:phoenix_ecto, "~> 4.1"},
       {:ecto_sql, "~> 3.4"},
-      {:postgrex, ">= 0.0.0"},
       {:phoenix_live_view, "~> 0.15.0"},
       {:floki, ">= 0.27.0", only: :test},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
+
+      # live dashboard and telemetry
       {:phoenix_live_dashboard, "~> 0.4"},
       {:telemetry_metrics, "~> 0.4"},
       {:telemetry_poller, "~> 0.4"},
+
+      # internationalization and localization
       {:gettext, "~> 0.11"},
+
+      # JSON parser
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+
+      # adapter to cowboy web server
+      {:plug_cowboy, "~> 2.0"},
+
+      # database adapter
+      {:postgrex, ">= 0.0.0"},
+
+      # create test data
+      {:ex_machina, "~> 2.5.0", only: :test}
     ]
   end
 

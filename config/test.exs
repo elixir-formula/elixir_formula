@@ -6,10 +6,7 @@ use Mix.Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :elixir_formula, ElixirFormula.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "elixir_formula_test#{System.get_env("MIX_TEST_PARTITION")}",
-  hostname: "localhost",
+  url: System.get_env("DATABASE_URL"),
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
