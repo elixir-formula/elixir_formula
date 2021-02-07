@@ -1,20 +1,25 @@
-# ElixirFormula
+# Elixir Formula
 
-To start your Phoenix server:
+Telegram channel for elixir developers and other people who interested in Elixir-lang. The project is a scraper which parse different resources for further publication in the telegram channel.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+## Scraping resources
+  - [AppSignal](https://appsignal.com/)
+  - [Carbon Five](https://www.carbonfive.com/)
+  - [Curiosum](https://curiosum.dev/)
+  - [Dashbit](https://dashbit.co/)
+  - [DevTo](https://dev.to/)
+  - [Dockyard](https://dockyard.com/)
+  - [Elixir Lang](https://elixir-lang.org/)
+  - [ErlangSolutions](https://www.erlang-solutions.com/)
+  - [Medium](http://medium.com/)
+  - [Plataformatec](https://plataformatec.com/en/)
+  - [Robots Thoughtbot](https://robots.thoughtbot.com/)
+  - [Today I Learned](https://til.hashrocket.com/)
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Contributing
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
