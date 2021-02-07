@@ -39,7 +39,6 @@ defmodule ElixirFormula.MixProject do
       {:phoenix_ecto, "~> 4.1"},
       {:ecto_sql, "~> 3.4"},
       {:phoenix_live_view, "~> 0.15.0"},
-      {:floki, ">= 0.27.0", only: :test},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
 
@@ -53,6 +52,12 @@ defmodule ElixirFormula.MixProject do
 
       # JSON parser
       {:jason, "~> 1.0"},
+
+      # HTML parser
+      {:floki, "~> 0.30.0"},
+
+      # HTTP client
+      {:httpoison, "~> 1.8"},
 
       # adapter to cowboy web server
       {:plug_cowboy, "~> 2.0"},
