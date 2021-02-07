@@ -3,7 +3,7 @@ version: '3.7'
 services:
   app:
     build: .
-    image: elixir_formula_app
+    image: elixir_formula_development
     container_name: application
     depends_on:
       - postgres

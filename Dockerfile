@@ -1,4 +1,4 @@
-FROM bitwalker/alpine-elixir:1.9.0
+FROM bitwalker/alpine-elixir:1.11.0
 
 RUN apk update \
     && apk upgrade --no-cache \
