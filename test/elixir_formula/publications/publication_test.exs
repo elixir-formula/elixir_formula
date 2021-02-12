@@ -27,5 +27,26 @@ defmodule ElixirFormula.PublicationTest do
 
       assert errors_on(changeset) == %{title: ["can't be blank"]}
     end
+
+    test "returns invalid chaangeset, when url isn't present", %{base_params: base_params} do
+      invalid_params = Map.merge(base_params, %{url: nil})
+      changeset = Publication.create_changeset(%Publication{}, invalid_params)
+
+      assert errors_on(changeset) == %{url: ["can't be blank"]}
+    end
+
+    test "returns invalid chaangeset, when author_name isn't present", %{base_params: base_params} do
+      invalid_params = Map.merge(base_params, %{author_name: nil})
+      changeset = Publication.create_changeset(%Publication{}, invalid_params)
+
+      assert errors_on(changeset) == %{author_name: ["can't be blank"]}
+    end
+
+    test "returns invalid chaangeset, when source isn't present", %{base_params: base_params} do
+      invalid_params = Map.merge(base_params, %{source: nil})
+      changeset = Publication.create_changeset(%Publication{}, invalid_params)
+
+      assert errors_on(changeset) == %{source: ["can't be blank"]}
+    end
   end
 end
