@@ -81,6 +81,7 @@ defmodule ElixirFormula.MixProject do
       setup: ["deps.get", "ecto.setup", "cmd npm install --prefix assets"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
+      "phx.start": ["ecto.create --quiet", "ecto.migrate", "phx.server"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
     ]
   end
