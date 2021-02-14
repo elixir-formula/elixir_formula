@@ -20,7 +20,7 @@ defmodule Scrapers.Interface do
 
       # API
 
-      def start_link() do
+      def start_link(_arg) do
         GenServer.start_link(__MODULE__, %{interval: 1_000}, name: __MODULE__)
       end
 

@@ -14,7 +14,9 @@ defmodule ElixirFormula.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: ElixirFormula.PubSub},
       # Start the Endpoint (http/https)
-      ElixirFormulaWeb.Endpoint
+      ElixirFormulaWeb.Endpoint,
+      # Start the Scrapers supervisor
+      Scrapers.Supervisor
       # Start a worker by calling: ElixirFormula.Worker.start_link(arg)
       # {ElixirFormula.Worker, arg}
     ]
