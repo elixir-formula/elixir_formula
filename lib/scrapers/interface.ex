@@ -18,10 +18,12 @@ defmodule Scrapers.Interface do
 
       alias ElixirFormula.Publications
 
+      @interval 3_600_000
+
       # API
 
-      def start_link(_arg) do
-        GenServer.start_link(__MODULE__, %{interval: 1_000}, name: __MODULE__)
+      def start_link(arg) do
+        GenServer.start_link(__MODULE__, %{interval: @interval}, name: __MODULE__)
       end
 
       # Callbacks
