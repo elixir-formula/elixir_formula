@@ -1,7 +1,7 @@
 defmodule ElixirFormula.PublicationTest do
   use ElixirFormula.DataCase, async: true
 
-  alias ElixirFormula.{Publication, Repo}
+  alias ElixirFormula.Publication
 
   setup do
     base_params = %{

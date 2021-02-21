@@ -1,8 +1,5 @@
 defmodule ElixirFormula.Publications.Create do
-  @moduledoc """
-  The Publications create service.
-  Responsible for checking and creating the publication.
-  """
+  @moduledoc false
 
   import Ecto.Query
 

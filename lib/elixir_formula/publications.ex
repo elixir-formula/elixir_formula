@@ -6,6 +6,22 @@ defmodule ElixirFormula.Publications do
   alias ElixirFormula.{Publication, Publications}
 
   @doc """
+  Returns list of publications.
+
+  ## Examples
+
+    iex> list_publications()
+    [%Publication{}, ...]
+
+    iex> list_publications(%{"status" => "published"})
+    [%Publication{status: "published"}, ...]
+  """
+  @spec list_publications(map()) :: [%Publication{}, ...]
+  def list_publications(params \\ %{}) do
+    Publications.List.call(params)
+  end
+
+  @doc """
   Creates a publication
 
   ## Examples
