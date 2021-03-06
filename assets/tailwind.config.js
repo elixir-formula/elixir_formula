@@ -19,7 +19,7 @@ module.exports = {
     },
   },
   variants: {
-    //backgroundColor: ["responsive", "hover", "focus", "active"]
+    textColor: ['hover']
   },
   plugins: [require("@tailwindcss/ui")],
   future: {
