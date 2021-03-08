@@ -62,6 +62,9 @@ defmodule ElixirFormula.MixProject do
       # adapter to cowboy web server
       {:plug_cowboy, "~> 2.0"},
 
+      # date/time library
+      {:timex, "~> 3.6"},
+
       # database adapter
       {:postgrex, ">= 0.0.0"},
 
