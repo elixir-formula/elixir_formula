@@ -1,21 +1,24 @@
-defmodule ElixirFormula.Publications.List do
+defmodule ElixirFormula.Publications.Services.GetPublicationsList do
   @moduledoc false
 
   import Ecto.Query
 
-  alias ElixirFormula.{Publication, Repo}
+  alias ElixirFormula.Publications.Schemas.Publication
+  alias ElixirFormula.Repo
 
   @doc """
   Returns list of publications with optional filtered params.
-  Available filters:
-    - by status
+
+  ## Parameters:
+
+    * `status` - published status
 
   ## Examples
 
-      iex> List.call(%{})
+      iex> GetPublicationsList.call(%{})
       [%Publication{}, ]
 
-      iex> List.call(%{"status" => "pending"})
+      iex> GetPublicationsList.call(%{"status" => "pending"})
       [%Publication{status: "pending"}]
   """
   @spec call(map()) :: [%Publication{}, ...]

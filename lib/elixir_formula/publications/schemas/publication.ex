@@ -1,4 +1,4 @@
-defmodule ElixirFormula.Publication do
+defmodule ElixirFormula.Publications.Schemas.Publication do
   use Ecto.Schema
   import Ecto.Changeset
 

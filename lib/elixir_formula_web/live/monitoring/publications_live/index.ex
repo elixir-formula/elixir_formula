@@ -1,7 +1,8 @@
 defmodule ElixirFormulaWeb.Monitoring.PublicationsLive.Index do
   use ElixirFormulaWeb, :live_view
 
-  alias ElixirFormula.{Publications, Publication}
+  alias ElixirFormula.Publications
+  alias ElixirFormula.Publications.Schemas.Publication
 
   def mount(_params, _session, socket) do
     socket = assign(socket, publications: Publications.list_publications(%{"status" => "pending"}))

@@ -1,9 +1,10 @@
-defmodule ElixirFormula.Publications.Create do
+defmodule ElixirFormula.Publications.Services.CreatePublication do
   @moduledoc false
 
   import Ecto.Query
 
-  alias ElixirFormula.{Publication, Repo}
+  alias ElixirFormula.Publications.Schemas.Publication
+  alias ElixirFormula.Repo
 
   @doc """
   Creates publication only when the same publication doesn't exists.
@@ -13,7 +14,7 @@ defmodule ElixirFormula.Publications.Create do
 
   ## Examples
 
-      iex> call(%{
+      iex> CreatePublication.call(%{
         "title" => "Elixir is awesome",
         "url" => "https://dev.to/elixir-is-awesome",
         "tags" => ["elixir", "development", "language"],
@@ -22,7 +23,7 @@ defmodule ElixirFormula.Publications.Create do
       })
       {:ok, %Content{}}
 
-      iex> create_publication(%{
+      iex> CreatePublication.call(%{
         "title" => "existing title",
         "url" => "https://dev.to/existing-title",
         "tags" => ["elixir"],
@@ -31,7 +32,7 @@ defmodule ElixirFormula.Publications.Create do
       })
       {:ok, nil}
 
-      iex> create_publication(%{})
+      iex> CreatePublication.call(%{})
       {:error, %Ecto.Changeset{}}
   """
   @spec call(map()) :: {:ok, %Publication{}} | {:ok, nil} | {:error, Ecto.Changeset.t()}

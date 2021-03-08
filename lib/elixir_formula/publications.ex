@@ -3,7 +3,11 @@ defmodule ElixirFormula.Publications do
   The Publications context.
   """
 
-  alias ElixirFormula.{Publication, Publications}
+  alias ElixirFormula.Publications.Schemas.Publication
+  alias ElixirFormula.Publications.Services.{
+    GetPublicationsList,
+    CreatePublication
+  }
 
   @doc """
   Returns list of publications.
@@ -17,9 +21,7 @@ defmodule ElixirFormula.Publications do
     [%Publication{status: "published"}, ...]
   """
   @spec list_publications(map()) :: [%Publication{}, ...]
-  def list_publications(params \\ %{}) do
-    Publications.List.call(params)
-  end
+  defdelegate list_publications(params), to: GetPublicationsList, as: :call
 
   @doc """
   Creates a publication
@@ -48,7 +50,5 @@ defmodule ElixirFormula.Publications do
       {:error, %Ecto.Changeset{}}
   """
   @spec create_publication(map()) :: {:ok, %Publication{}} | {:ok, nil} | {:error, Ecto.Changeset.t()}
-  def create_publication(publication_params) do
-    Publications.Create.call(publication_params)
-  end
+  defdelegate create_publication(params), to: CreatePublication, as: :call
 end

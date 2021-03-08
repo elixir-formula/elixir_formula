@@ -3,7 +3,7 @@ defmodule ElixirFormula.PublicationFactory do
   defmacro __using__(_opts) do
     quote do
       def publication_factory do
-        %ElixirFormula.Publication{
+        %ElixirFormula.Publications.Schemas.Publication{
           title: sequence(:name, &"Publication #{&1}"),
           url: "http://johndoe.medium.com/elixit-is-awesome",
           tags: ["elixir", "tutorial"],
