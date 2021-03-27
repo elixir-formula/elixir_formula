@@ -23,12 +23,12 @@ defmodule ElixirFormulaWeb.Router do
   scope "/", ElixirFormulaWeb do
     pipe_through :browser
 
+    live "/", PublicationsLive.Index, :index
   end
 
   scope "/monitoring", ElixirFormulaWeb.Monitoring do
     pipe_through [:browser, :admin]
 
-    live "/", PublicationsLive.Index, :index
     live_dashboard "/dashboard", metrics: ElixirFormulaWeb.Telemetry
   end
 end

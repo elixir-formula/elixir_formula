@@ -35,13 +35,14 @@ module.exports = (env, options) => {
           }
         },
         {
-          test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-          use: {
+          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          use: [{
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]',
-            },
-          },
+              name: '[name].[ext]',
+              outputPath: '../fonts'
+            }
+          }]
         },
         {
           test: /\.[s]?css$/,

@@ -1,4 +1,4 @@
-defmodule ElixirFormulaWeb.Monitoring.PublicationsLive.Index do
+defmodule ElixirFormulaWeb.PublicationsLive.Index do
   use ElixirFormulaWeb, :live_view
 
   alias ElixirFormula.Publications
