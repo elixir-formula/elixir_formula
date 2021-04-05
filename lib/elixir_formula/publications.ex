@@ -10,15 +10,20 @@ defmodule ElixirFormula.Publications do
   }
 
   @doc """
-  Returns list of publications.
+  Returns list of publications with optional filtered params.
+
+  ## Parameters:
+
+  * `params` - Map of parameters for creating
+    * `status` - published status
 
   ## Examples
 
-    iex> list_publications()
-    [%Publication{}, ...]
+      iex> list_publications(%{})
+      %Scrivener.Page[%Publication{}, ]
 
-    iex> list_publications(%{"status" => "published"})
-    [%Publication{status: "published"}, ...]
+      iex> list_publications(%{status: "pending", page: 2})
+      %Scrivener.Page{entries: [%Publication{}, ...], page_number: 2, page_size: 10, total_entries: 2, total_pages: 1}
   """
   @spec list_publications(map()) :: [%Publication{}, ...]
   defdelegate list_publications(params), to: GetPublicationsList, as: :call

@@ -68,6 +68,9 @@ defmodule ElixirFormula.MixProject do
       # database adapter
       {:postgrex, ">= 0.0.0"},
 
+      # pagination library
+      {:scrivener_ecto, "~> 2.0"},
+
       # create test data
       {:ex_machina, "~> 2.5.0", only: :test}
     ]
