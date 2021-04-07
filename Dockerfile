@@ -12,8 +12,14 @@ RUN apk update \
 
 WORKDIR /elixir_formula
 
-COPY . /elixir_formula
+COPY mix.exs .
+COPY mix.lock .
 
-RUN mix do deps.get, deps.compile, compile
+RUN mix do deps.get, deps.compile
+
+RUN mkdir assets
+
+COPY assets/package.json assets
+COPY assets/package-lock.json assets
 
 RUN cd assets && npm install && cd ..

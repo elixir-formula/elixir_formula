@@ -25,6 +25,9 @@ module.exports = (env, options) => {
       publicPath: '/js/'
     },
     devtool: devMode ? 'eval-cheap-module-source-map' : undefined,
+    watchOptions: {
+      poll: true
+    },
     module: {
       rules: [
         {
