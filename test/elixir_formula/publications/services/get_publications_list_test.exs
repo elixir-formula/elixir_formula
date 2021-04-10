@@ -13,13 +13,14 @@ defmodule ElixirFormula.Publications.Services.GetPublicationsListTest do
 
   describe "with filter by pending status" do
     test "returns list of pending publications" do
-      assert [%Publication{status: "published"}] = GetPublicationsList.call(%{"status" => "published"})
+      assert %Scrivener.Page{entries: [%Publication{status: "published"}]} =
+               GetPublicationsList.call(%{status: "published"})
     end
   end
 
   describe "without any filters" do
     test "returns list of all publications" do
-      assert publications = GetPublicationsList.call(%{})
+      %Scrivener.Page{entries: publications} = GetPublicationsList.call(%{})
       assert Enum.count(publications) == 2
     end
   end

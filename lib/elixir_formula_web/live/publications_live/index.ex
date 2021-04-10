@@ -5,15 +5,30 @@ defmodule ElixirFormulaWeb.PublicationsLive.Index do
   alias ElixirFormula.Publications.Schemas.Publication
 
   def mount(_params, _session, socket) do
-    socket = assign(socket, publications: Publications.list_publications(%{"status" => "pending"}))
     {:ok, socket, temporary_assigns: [publications: []]}
+  end
+
+  def handle_params(params, _url, socket) do
+    page = String.to_integer(params["page"] || "1")
+
+    %{entries: publications, page_number: page_number, total_pages: total_pages} =
+      Publications.list_publications(%{status: "pending", page: page})
+
+    socket =
+      assign(socket,
+        current_page: page,
+        total_pages: total_pages,
+        publications: publications
+      )
+
+    {:noreply, socket}
   end
 
   # Helpers
 
   defp publication_tags(%Publication{tags: tags}) do
     tags
-    |> Enum.map(&("##{&1}"))
+    |> Enum.map(&"##{&1}")
     |> Enum.join(" ")
   end
 

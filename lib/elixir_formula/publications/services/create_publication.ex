@@ -52,6 +52,6 @@ defmodule ElixirFormula.Publications.Services.CreatePublication do
   defp publication_exists?(title, author_name) do
     Publication
     |> where([p], p.title == ^title and p.author_name == ^author_name)
-    |> Repo.exists?
+    |> Repo.exists?()
   end
 end

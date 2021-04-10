@@ -10,7 +10,7 @@ defmodule ElixirFormula.Publications.Schemas.Publication do
     field :status, :string, default: "pending", null: false
     field :source, :string
 
-    timestamps([type: :utc_datetime])
+    timestamps(type: :utc_datetime)
   end
 
   def create_changeset(publication, attrs \\ %{}) do

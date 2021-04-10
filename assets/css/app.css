@@ -13,3 +13,16 @@
 @import "tailwindcss/utilities";
 
 @import "./phoenix_live_view.css";
+
+
+.active-page {
+  @apply bg-purple-800 text-white;
+}
+
+.pagination-arrow {
+  @apply h-12 w-12 flex justify-center items-center rounded-full bg-gray-200 cursor-pointer;
+}
+
+.pagination-number {
+  @apply w-12 justify-center items-center hidden cursor-pointer leading-5 transition duration-150 ease-in rounded-full;
+}

@@ -4,6 +4,7 @@ defmodule ElixirFormula.Publications do
   """
 
   alias ElixirFormula.Publications.Schemas.Publication
+
   alias ElixirFormula.Publications.Services.{
     GetPublicationsList,
     CreatePublication
@@ -54,6 +55,7 @@ defmodule ElixirFormula.Publications do
       iex> create_publication(%{})
       {:error, %Ecto.Changeset{}}
   """
-  @spec create_publication(map()) :: {:ok, %Publication{}} | {:ok, nil} | {:error, Ecto.Changeset.t()}
+  @spec create_publication(map()) ::
+          {:ok, %Publication{}} | {:ok, nil} | {:error, Ecto.Changeset.t()}
   defdelegate create_publication(params), to: CreatePublication, as: :call
 end
