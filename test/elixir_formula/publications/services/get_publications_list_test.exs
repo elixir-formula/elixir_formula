@@ -5,16 +5,16 @@ defmodule ElixirFormula.Publications.Services.GetPublicationsListTest do
   alias ElixirFormula.Publications.Services.GetPublicationsList
 
   setup do
-    insert(:publication, status: "pending")
-    insert(:publication, status: "published")
+    insert(:publication, status: :pending)
+    insert(:publication, status: :published)
 
     :ok
   end
 
   describe "with filter by pending status" do
     test "returns list of pending publications" do
-      assert %Scrivener.Page{entries: [%Publication{status: "published"}]} =
-               GetPublicationsList.call(%{status: "published"})
+      assert %Scrivener.Page{entries: [%Publication{status: :published}]} =
+               GetPublicationsList.call(%{status: :published})
     end
   end
 

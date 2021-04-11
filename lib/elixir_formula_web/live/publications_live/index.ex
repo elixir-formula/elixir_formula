@@ -11,8 +11,8 @@ defmodule ElixirFormulaWeb.PublicationsLive.Index do
   def handle_params(params, _url, socket) do
     page = String.to_integer(params["page"] || "1")
 
-    %{entries: publications, page_number: page_number, total_pages: total_pages} =
-      Publications.list_publications(%{status: "pending", page: page})
+    %{entries: publications, total_pages: total_pages} =
+      Publications.list_publications(%{status: :pending, page: page})
 
     socket =
       assign(socket,

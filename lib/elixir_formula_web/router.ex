@@ -16,10 +16,6 @@ defmodule ElixirFormulaWeb.Router do
     plug ElixirFormulaWeb.AdminPlug
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", ElixirFormulaWeb do
     pipe_through :browser
 

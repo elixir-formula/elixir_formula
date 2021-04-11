@@ -23,7 +23,7 @@ defmodule ElixirFormula.Publications do
       iex> list_publications(%{})
       %Scrivener.Page[%Publication{}, ]
 
-      iex> list_publications(%{status: "pending", page: 2})
+      iex> list_publications(%{status: :pending, page: 2})
       %Scrivener.Page{entries: [%Publication{}, ...], page_number: 2, page_size: 10, total_entries: 2, total_pages: 1}
   """
   @spec list_publications(map()) :: [%Publication{}, ...]

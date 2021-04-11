@@ -8,7 +8,7 @@ defmodule ElixirFormula.PublicationFactory do
           url: "http://johndoe.medium.com/elixit-is-awesome",
           tags: ["elixir", "tutorial"],
           author_name: "John Doe",
-          status: "pending",
+          status: :pending,
           source: "medium"
         }
       end

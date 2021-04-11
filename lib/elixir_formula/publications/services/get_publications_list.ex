@@ -21,7 +21,7 @@ defmodule ElixirFormula.Publications.Services.GetPublicationsList do
       iex> GetPublicationsList.call(%{})
       %Scrivener.Page{entries: [%Publication{}, ...], page_number: 1, page_size: 10, total_entries: 2, total_pages: 1}
 
-      iex> GetPublicationsList.call(%{status: "pending", page: 2})
+      iex> GetPublicationsList.call(%{status: :pending, page: 2})
       %Scrivener.Page{entries: [%Publication{status: "pernding"}, ...], page_number: 2, page_size: 10, total_entries: 15, total_pages: 2}
   """
   @spec call(map()) :: [%Publication{}, ...]
