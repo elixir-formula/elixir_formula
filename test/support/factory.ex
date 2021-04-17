@@ -7,4 +7,5 @@ defmodule ElixirFormula.Factory do
   use ExMachina.Ecto, repo: ElixirFormula.Repo
 
   use ElixirFormula.PublicationFactory
+  use ElixirFormula.UserFactory
 end

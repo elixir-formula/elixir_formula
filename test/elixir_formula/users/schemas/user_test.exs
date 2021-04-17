@@ -7,7 +7,8 @@ defmodule ElixirFormula.Users.Schemas.UserTest do
     base_params = %{
       name: "Lady Gaga",
       nickname: "ladyGaga",
-      avatar_url: "https://i.imgur.com/nnbRwDs.jpeg"
+      image: "https://i.imgur.com/nnbRwDs.jpeg",
+      email: "lady_gaga@gmail.com"
     }
 
     [base_params: base_params]
@@ -34,11 +35,18 @@ defmodule ElixirFormula.Users.Schemas.UserTest do
       assert errors_on(changeset) == %{nickname: ["can't be blank"]}
     end
 
-    test "returns invalid chaangeset, when avatar_url isn't present", %{base_params: base_params} do
-      invalid_params = Map.merge(base_params, %{avatar_url: nil})
+    test "returns invalid chaangeset, when image isn't present", %{base_params: base_params} do
+      invalid_params = Map.merge(base_params, %{image: nil})
       changeset = User.create_changeset(%User{}, invalid_params)
 
-      assert errors_on(changeset) == %{avatar_url: ["can't be blank"]}
+      assert errors_on(changeset) == %{image: ["can't be blank"]}
+    end
+
+    test "returns invalid chaangeset, when email isn't present", %{base_params: base_params} do
+      invalid_params = Map.merge(base_params, %{email: nil})
+      changeset = User.create_changeset(%User{}, invalid_params)
+
+      assert errors_on(changeset) == %{email: ["can't be blank"]}
     end
   end
 end

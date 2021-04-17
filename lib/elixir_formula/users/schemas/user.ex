@@ -6,7 +6,7 @@ defmodule ElixirFormula.Users.Schemas.User do
     field :name, :string
     field :nickname, :string
     field :email, :string
-    field :avatar_url, :string
+    field :image, :string
     field :location, :string
     field :is_admin, :boolean, default: false, null: false
 
@@ -15,8 +15,8 @@ defmodule ElixirFormula.Users.Schemas.User do
 
   def create_changeset(user, attrs \\ %{}) do
     user
-    |> cast(attrs, [:name, :nickname, :email, :avatar_url, :location, :is_admin])
-    |> validate_required([:name, :nickname, :email, :avatar_url])
+    |> cast(attrs, [:name, :nickname, :email, :image, :location, :is_admin])
+    |> validate_required([:name, :nickname, :email, :image])
     |> unique_constraint(:email)
   end
 end
