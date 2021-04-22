@@ -19,9 +19,10 @@ module.exports = {
     },
   },
   variants: {
-    textColor: ['hover']
+    textColor: ['hover'],
+    display: ["responsive", "focus", "dropdown"]
   },
-  plugins: [require("@tailwindcss/ui")],
+  plugins: [require('tailwindcss-dropdown')],
   future: {
     removeDeprecatedGapUtilities: true,
   },

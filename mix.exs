@@ -71,6 +71,10 @@ defmodule ElixirFormula.MixProject do
       # pagination library
       {:scrivener_ecto, "~> 2.0"},
 
+      # Github auth 
+      {:ueberauth, "~> 0.6"},
+      {:ueberauth_github, "~> 0.7"},
+
       # create test data
       {:ex_machina, "~> 2.5.0", only: :test}
     ]

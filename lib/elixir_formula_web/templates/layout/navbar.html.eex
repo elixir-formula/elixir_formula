@@ -6,14 +6,34 @@
           <img class="block lg:hidden h-8 w-auto" src="/images/phoenix.svg">
           <img class="hidden lg:block h-8 w-auto" src="/images/phoenix.svg">
         </div>
-        <div class="hidden sm:block sm:ml-6">
+        <!-- <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
-            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Blog articles</a>
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Jobs</a>
+            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Jobs</a>
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Merch</a>
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Donation</a>
           </div>
-        </div>
+        </div> -->
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <%= if @current_user do %>
+          <div class="relative flex-shrink-0 dropdown:block">
+            <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <%= img_tag(@current_user.image, class: "h-8 w-8 rounded-full") %>
+            </button>
+            <ul class="absolute right-0 hidden w-32 p-2 space-y-2 bg-white rounded-lg shadow-lg z-10" aria-label="submenu">
+              <li>
+                <a href="#" class="inline-block w-full px-2 py-1 font-medium text-gray-600 transition-colors duration-150 rounded-md focus:outline-none focus:shadow-outline hover:bg-gray-100 hover:text-gray-900">
+                  Admin panel
+                </a>
+              </li>
+              <li>
+                <%= link "Log out", to: Routes.auth_path(@conn, :delete), method: "delete", class: "inline-block w-full px-2 py-1 font-medium text-gray-600 transition-colors duration-150 rounded-md focus:outline-none focus:shadow-outline hover:bg-gray-100 hover:text-gray-900" %>
+              </li>
+            </ul>
+          </div>
+        <% else %>
+          <%= link "Login", to: Routes.auth_path(@conn, :request, "github"), class: "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" %>
+        <% end %>
       </div>
     </div>
   </div>
