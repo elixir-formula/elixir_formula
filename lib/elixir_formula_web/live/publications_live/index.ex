@@ -12,7 +12,7 @@ defmodule ElixirFormulaWeb.PublicationsLive.Index do
     page = String.to_integer(params["page"] || "1")
 
     %{entries: publications, total_pages: total_pages} =
-      Publications.list_publications(%{status: :pending, page: page})
+      Publications.list_publications(%{status: :published, page: page})
 
     socket =
       assign(socket,
