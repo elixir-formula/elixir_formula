@@ -37,7 +37,7 @@ defmodule ElixirFormula.Users.Services.CreateUser do
       iex> CreateUser.call(%{})
       {:error, %Ecto.Changeset{}}
   """
-  @spec call(map()) :: {:ok, %User{}} | {:error, %Ecto.Changeset{}}
+  @spec call(map()) :: {:ok, User.t()} | {:error, %Ecto.Changeset{}}
   def call(%{email: email} = params) do
     case GetUser.call(:email, email) do
       {:ok, %User{} = user} -> {:ok, user}

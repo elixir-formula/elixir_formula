@@ -15,7 +15,7 @@ defmodule ElixirFormula.Users.Services.GetUser do
       {:error, :user_not_found}
   """
 
-  @spec call(atom(), integer() | binary()) :: {:ok, %User{}} | {:error, :user_not_found}
+  @spec call(atom(), integer() | binary()) :: {:ok, User.t()} | {:error, :user_not_found}
   def call(field, value)
 
   def call(:id, id) do

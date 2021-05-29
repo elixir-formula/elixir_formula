@@ -26,11 +26,20 @@ defmodule ElixirFormula.Publications do
       iex> list_publications(%{status: :pending, page: 2})
       %Scrivener.Page{entries: [%Publication{}, ...], page_number: 2, page_size: 10, total_entries: 2, total_pages: 1}
   """
-  @spec list_publications(map()) :: [%Publication{}, ...]
+  @spec list_publications(map()) :: [Publication.t(), ...]
   defdelegate list_publications(params), to: GetPublicationsList, as: :call
 
   @doc """
   Creates a publication
+
+  ## Parameters
+
+  * `params` - Map of parameters for creating
+      * `title` - publication title
+      * `url` - publication url
+      * `tags` - list of tags
+      * `author_name` - publication author name
+      * `source` - name of scraping website
 
   ## Examples
 
@@ -55,7 +64,6 @@ defmodule ElixirFormula.Publications do
       iex> create_publication(%{})
       {:error, %Ecto.Changeset{}}
   """
-  @spec create_publication(map()) ::
-          {:ok, %Publication{}} | {:ok, nil} | {:error, Ecto.Changeset.t()}
+  @spec create_publication(map()) :: {:ok, Publication.t()} | {:ok, nil} | {:error, Ecto.Changeset.t()}
   defdelegate create_publication(params), to: CreatePublication, as: :call
 end

@@ -27,7 +27,7 @@ defmodule ElixirFormula.Users do
     iex> get_user(:id, 0)
     {:error, :record_not_found, "User", "id", 0}
   """
-  @spec get_user(atom(), integer() | binary()) :: {:ok, %User{}} | {:error, :user_not_found}
+  @spec get_user(atom(), integer() | binary()) :: {:ok, User.t()} | {:error, :user_not_found}
   defdelegate get_user(field, value), to: GetUser, as: :call
 
   @doc """
@@ -61,6 +61,6 @@ defmodule ElixirFormula.Users do
       iex> create_user(%{})
       {:error, %Ecto.Changeset{}}
   """
-  @spec create_user(map()) :: {:ok, %User{}} | {:error, Ecto.Changeset.t()}
+  @spec create_user(map()) :: {:ok, User.t()} | {:error, Ecto.Changeset.t()}
   defdelegate create_user(params), to: CreateUser, as: :call
 end
