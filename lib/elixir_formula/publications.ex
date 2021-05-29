@@ -6,8 +6,8 @@ defmodule ElixirFormula.Publications do
   alias ElixirFormula.Publications.Schemas.Publication
 
   alias ElixirFormula.Publications.Services.{
-    GetPublicationsList,
-    CreatePublication
+    CreatePublication,
+    GetPublicationsList
   }
 
   @doc """

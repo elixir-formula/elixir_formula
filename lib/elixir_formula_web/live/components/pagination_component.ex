@@ -1,4 +1,7 @@
 defmodule ElixirFormulaWeb.PaginationComponent do
+  @moduledoc """
+  Live view pagination component.
+  """
   use ElixirFormulaWeb, :live_component
 
   def render(assigns) do

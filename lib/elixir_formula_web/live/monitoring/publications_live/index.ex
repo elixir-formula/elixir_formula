@@ -1,19 +1,21 @@
 defmodule ElixirFormulaWeb.Monitoring.PublicationsLive.Index do
+  @moduledoc """
+  Admin publications page.
+  """
   use ElixirFormulaWeb, :live_view
 
   alias ElixirFormula.Publications
   alias ElixirFormula.Publications.Schemas.Publication
 
-  def mount(params, session, socket) do
+  def mount(_params, session, socket) do
     socket = assign_user(session, socket)
     {:ok, socket, temporary_assigns: [publications: []]}
   end
 
-  def handle_params(params, url, socket) do
+  def handle_params(params, _url, socket) do
     page = String.to_integer(params["page"] || "1")
 
-    %{entries: publications, total_pages: total_pages} =
-      Publications.list_publications(%{status: :pending, page: page})
+    %{entries: publications, total_pages: total_pages} = Publications.list_publications(%{status: :pending, page: page})
 
     socket =
       assign(socket,

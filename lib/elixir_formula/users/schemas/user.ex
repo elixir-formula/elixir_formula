@@ -1,4 +1,7 @@
 defmodule ElixirFormula.Users.Schemas.User do
+  @moduledoc """
+  Schema for users table.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

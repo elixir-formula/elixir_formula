@@ -1,4 +1,7 @@
 defmodule Scrapers.PublishingPlatforms.DevTo do
+  @moduledoc """
+  Dev.to scrapper implementation.
+  """
   use Scrapers.Interface
 
   def article_author(article) do

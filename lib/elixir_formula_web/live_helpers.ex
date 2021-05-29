@@ -1,4 +1,7 @@
 defmodule ElixirFormulaWeb.LiveHelpers do
+  @moduledoc """
+  Assign current user into socket.
+  """
   import Phoenix.LiveView
 
   alias ElixirFormula.Users

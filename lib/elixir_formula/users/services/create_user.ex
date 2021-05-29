@@ -1,9 +1,9 @@
 defmodule ElixirFormula.Users.Services.CreateUser do
   @moduledoc false
 
-  alias ElixirFormula.Users.Services.GetUser
-  alias ElixirFormula.Users.Schemas.User
   alias ElixirFormula.Repo
+  alias ElixirFormula.Users.Schemas.User
+  alias ElixirFormula.Users.Services.GetUser
 
   @doc """
   Creates user only when the same user doesn't exists.

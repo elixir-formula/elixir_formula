@@ -6,6 +6,8 @@ defmodule ElixirFormula.Application do
   use Application
 
   def start(_type, _args) do
+    ElixirFormula.Release.migrate()
+
     children = [
       # Start the Ecto repository
       ElixirFormula.Repo,

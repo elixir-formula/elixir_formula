@@ -11,7 +11,11 @@ defmodule ElixirFormula.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      preferred_cli_env: [check: :test]
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        ci: :test,
+        coveralls: :test
+      ]
     ]
   end
 
@@ -42,12 +46,12 @@ defmodule ElixirFormula.MixProject do
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
 
-      # live dashboard and telemetry
+      # Dashboard and telemetry
       {:phoenix_live_dashboard, "~> 0.4"},
       {:telemetry_metrics, "~> 0.4"},
       {:telemetry_poller, "~> 0.4"},
 
-      # internationalization and localization
+      # Internationalization and localization
       {:gettext, "~> 0.11"},
 
       # JSON parser
@@ -59,24 +63,28 @@ defmodule ElixirFormula.MixProject do
       # HTTP client
       {:httpoison, "~> 1.8"},
 
-      # adapter to cowboy web server
+      # Web server
       {:plug_cowboy, "~> 2.0"},
 
-      # date/time library
+      # Date/time library
       {:timex, "~> 3.6"},
 
-      # database adapter
+      # Database adapter
       {:postgrex, ">= 0.0.0"},
 
-      # pagination library
+      # Pagination library
       {:scrivener_ecto, "~> 2.0"},
 
-      # Github auth 
+      # Github auth
       {:ueberauth, "~> 0.6"},
       {:ueberauth_github, "~> 0.7"},
 
-      # create test data
-      {:ex_machina, "~> 2.5.0", only: :test}
+      # Testing tools
+      {:ex_machina, "~> 2.7.0", only: :test},
+      {:excoveralls, "~> 0.14.0", only: :test},
+
+      # Static code analysis
+      {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -91,8 +99,8 @@ defmodule ElixirFormula.MixProject do
       setup: ["deps.get", "ecto.setup", "cmd npm install --prefix assets"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "phx.start": ["ecto.create --quiet", "ecto.migrate", "phx.server"],
-      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"]
+      test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
+      ci: ["format --check-formatted", "credo --strict", "test"]
     ]
   end
 end

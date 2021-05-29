@@ -1,4 +1,7 @@
 defmodule ElixirFormula.Publications.Schemas.Publication do
+  @moduledoc """
+  Schema for publications table.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

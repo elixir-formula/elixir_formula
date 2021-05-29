@@ -1,4 +1,5 @@
 defmodule ElixirFormulaWeb.AdminPlug do
+  @moduledoc false
   @behaviour Plug
   import Plug.Conn
 

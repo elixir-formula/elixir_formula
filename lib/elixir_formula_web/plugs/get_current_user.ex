@@ -1,4 +1,5 @@
 defmodule ElixirFormulaWeb.GetCurrentUser do
+  @moduledoc false
   @behaviour Plug
   import Plug.Conn
 

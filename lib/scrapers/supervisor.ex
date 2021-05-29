@@ -1,4 +1,5 @@
 defmodule Scrapers.Supervisor do
+  @moduledoc false
   use Supervisor
 
   alias Scrapers.PublishingPlatforms

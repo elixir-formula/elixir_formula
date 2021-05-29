@@ -6,8 +6,8 @@ defmodule ElixirFormula.Users do
   alias ElixirFormula.Users.Schemas.User
 
   alias ElixirFormula.Users.Services.{
-    GetUser,
-    CreateUser
+    CreateUser,
+    GetUser
   }
 
   @doc """

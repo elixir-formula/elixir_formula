@@ -1,4 +1,7 @@
 defmodule ElixirFormulaWeb.PublicationsLive.Index do
+  @moduledoc """
+  Main page live view module.
+  """
   use ElixirFormulaWeb, :live_view
 
   alias ElixirFormula.Publications

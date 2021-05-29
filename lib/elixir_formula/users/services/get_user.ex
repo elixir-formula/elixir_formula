@@ -1,7 +1,7 @@
 defmodule ElixirFormula.Users.Services.GetUser do
   @moduledoc false
-  alias ElixirFormula.Users.Schemas.User
   alias ElixirFormula.Repo
+  alias ElixirFormula.Users.Schemas.User
 
   @doc """
   Returns user by searching field.
