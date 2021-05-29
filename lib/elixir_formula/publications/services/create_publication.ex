@@ -15,20 +15,20 @@ defmodule ElixirFormula.Publications.Services.CreatePublication do
   ## Examples
 
       iex> CreatePublication.call(%{
-        "title" => "Elixir is awesome",
-        "url" => "https://dev.to/elixir-is-awesome",
-        "tags" => ["elixir", "development", "language"],
-        "author_name" => "john doe",
-        "source" => "dev.to"
+        title: "Elixir is awesome",
+        url: "https://dev.to/elixir-is-awesome",
+        tags: ["elixir", "development", "language"],
+        author_name: "john doe",
+        source: "dev.to"
       })
       {:ok, %Content{}}
 
       iex> CreatePublication.call(%{
-        "title" => "existing title",
-        "url" => "https://dev.to/existing-title",
-        "tags" => ["elixir"],
-        "author_name" => "existing author",
-        "source" => "dev.to"
+        title: "existing title",
+        url: "https://dev.to/existing-title",
+        tags: ["elixir"],
+        author_name: "existing author",
+        source: "dev.to"
       })
       {:ok, nil}
 
@@ -36,7 +36,7 @@ defmodule ElixirFormula.Publications.Services.CreatePublication do
       {:error, %Ecto.Changeset{}}
   """
   @spec call(map()) :: {:ok, Publication.t()} | {:ok, nil} | {:error, Ecto.Changeset.t()}
-  def call(%{"title" => title, "author_name" => author_name} = params) do
+  def call(%{title: title, author_name: author_name} = params) do
     case publication_exists?(title, author_name) do
       true -> {:ok, nil}
       false -> create_publication(params)

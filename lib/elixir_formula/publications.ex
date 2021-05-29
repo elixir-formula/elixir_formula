@@ -35,20 +35,20 @@ defmodule ElixirFormula.Publications do
   ## Examples
 
       iex> create_publication(%{
-        "title" => "Elixir is awesome",
-        "url" => "https://dev.to/elixir-is-awesome",
-        "tags" => ["elixir", "development", "language"],
-        "author_name" => "john doe",
-        "source" => "dev.to"
+        title: "Elixir is awesome",
+        url: "https://dev.to/elixir-is-awesome",
+        tags: ["elixir", "development", "language"],
+        author_name: "john doe",
+        source: "dev.to"
       })
       {:ok, %Content{}}
 
       iex> create_publication(%{
-        "title" => "existing title",
-        "url" => "https://dev.to/existing-title",
-        "tags" => ["elixir"],
-        "author_name" => "existing author",
-        "source" => "dev.to"
+        title: "existing title",
+        url: "https://dev.to/existing-title",
+        tags: ["elixir"],
+        author_name: "existing author",
+        source: "dev.to"
       })
       {:ok, nil}
 

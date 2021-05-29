@@ -63,11 +63,11 @@ defmodule Scrapers.Interface do
 
       def build_params(article) do
         %{
-          "title" => article_title(article),
-          "url" => article_url(article),
-          "tags" => article_tags(article),
-          "author_name" => article_author(article),
-          "source" => article_source()
+          title: article_title(article),
+          url: article_url(article),
+          tags: article_tags(article),
+          author_name: article_author(article),
+          source: article_source()
         }
       end
     end

@@ -8,10 +8,10 @@ defmodule ElixirFormula.Publications.Services.CreatePublicationTest do
     publication = insert(:publication, title: "elixir", author_name: "lady gaga")
 
     base_params = %{
-      "title" => "Elixir article",
-      "url" => "http://dev.to/elixir-article",
-      "author_name" => "Lady Gaga",
-      "source" => "dev.to"
+      title: "Elixir article",
+      url: "http://dev.to/elixir-article",
+      author_name: "Lady Gaga",
+      source: "dev.to"
     }
 
     [base_params: base_params, publication: publication]
@@ -26,14 +26,14 @@ defmodule ElixirFormula.Publications.Services.CreatePublicationTest do
 
   describe "when params is invalid" do
     test "returns {:error, %Ecto.Changeset{}}", %{base_params: base_params} do
-      base_params = Map.merge(base_params, %{"title" => ""})
+      base_params = Map.merge(base_params, %{title: ""})
       assert {:error, _changeset} = CreatePublication.call(base_params)
     end
   end
 
   describe "when publication already exists" do
     test "returns {:ok, nil}", %{base_params: base_params} do
-      base_params = Map.merge(base_params, %{"title" => "elixir", "author_name" => "lady gaga"})
+      base_params = Map.merge(base_params, %{title: "elixir", author_name: "lady gaga"})
       assert {:ok, nil} = CreatePublication.call(base_params)
     end
   end
