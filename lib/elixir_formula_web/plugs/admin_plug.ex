@@ -1,7 +1,7 @@
 defmodule ElixirFormulaWeb.AdminPlug do
   @moduledoc false
   @behaviour Plug
-  import Plug.Conn
+  # import Plug.Conn
 
   def init(opts), do: opts
 
