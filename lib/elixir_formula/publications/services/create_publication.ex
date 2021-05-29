@@ -35,7 +35,7 @@ defmodule ElixirFormula.Publications.Services.CreatePublication do
       iex> CreatePublication.call(%{})
       {:error, %Ecto.Changeset{}}
   """
-  @spec call(map()) :: {:ok, %Publication{}} | {:ok, nil} | {:error, Ecto.Changeset.t()}
+  @spec call(map()) :: {:ok, Publication.t()} | {:ok, nil} | {:error, Ecto.Changeset.t()}
   def call(%{"title" => title, "author_name" => author_name} = params) do
     case publication_exists?(title, author_name) do
       true -> {:ok, nil}

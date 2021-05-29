@@ -10,7 +10,7 @@ defmodule ElixirFormula.Publications.Query do
   @doc """
   Filters publications by specific status.
   """
-  @spec by_status(Ecto.Query.t() | %Publication{}, binary()) :: Ecto.Query.t()
+  @spec by_status(Ecto.Query.t() | Publication.t(), binary()) :: Ecto.Query.t()
   def by_status(query, status) do
     where(query, [p], p.status == ^status)
   end

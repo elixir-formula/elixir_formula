@@ -19,7 +19,6 @@ defmodule ElixirFormulaWeb.AuthController do
     with params <- Map.from_struct(auth.info),
          {:ok, user} <- Users.create_user(params) do
       conn
-      |> put_flash(:info, "Successfully authenticated.")
       |> put_session(:user_id, user.id)
       |> configure_session(renew: true)
       |> redirect(to: "/")
@@ -28,7 +27,6 @@ defmodule ElixirFormulaWeb.AuthController do
 
   def delete(conn, _params) do
     conn
-    |> put_flash(:info, "You have been logged out!")
     |> clear_session()
     |> redirect(to: "/")
   end

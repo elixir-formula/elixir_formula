@@ -47,6 +47,8 @@ defmodule ElixirFormulaWeb do
       use Phoenix.LiveView,
         layout: {ElixirFormulaWeb.LayoutView, "live.html"}
 
+      import ElixirFormulaWeb.LiveHelpers
+
       unquote(view_helpers())
     end
   end
