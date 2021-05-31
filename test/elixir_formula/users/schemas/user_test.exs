@@ -14,37 +14,37 @@ defmodule ElixirFormula.Users.Schemas.UserTest do
     [base_params: base_params]
   end
 
-  describe "create_changeset/2" do
+  describe "changeset/2" do
     test "returns valid changeset", %{base_params: base_params} do
-      changeset = User.create_changeset(%User{}, base_params)
+      changeset = User.changeset(%User{}, base_params)
 
       assert errors_on(changeset) == %{}
     end
 
     test "returns invalid chaangeset, when name isn't present", %{base_params: base_params} do
       invalid_params = Map.merge(base_params, %{name: nil})
-      changeset = User.create_changeset(%User{}, invalid_params)
+      changeset = User.changeset(%User{}, invalid_params)
 
       assert errors_on(changeset) == %{name: ["can't be blank"]}
     end
 
     test "returns invalid chaangeset, when nickname isn't present", %{base_params: base_params} do
       invalid_params = Map.merge(base_params, %{nickname: nil})
-      changeset = User.create_changeset(%User{}, invalid_params)
+      changeset = User.changeset(%User{}, invalid_params)
 
       assert errors_on(changeset) == %{nickname: ["can't be blank"]}
     end
 
     test "returns invalid chaangeset, when image isn't present", %{base_params: base_params} do
       invalid_params = Map.merge(base_params, %{image: nil})
-      changeset = User.create_changeset(%User{}, invalid_params)
+      changeset = User.changeset(%User{}, invalid_params)
 
       assert errors_on(changeset) == %{image: ["can't be blank"]}
     end
 
     test "returns invalid chaangeset, when email isn't present", %{base_params: base_params} do
       invalid_params = Map.merge(base_params, %{email: nil})
-      changeset = User.create_changeset(%User{}, invalid_params)
+      changeset = User.changeset(%User{}, invalid_params)
 
       assert errors_on(changeset) == %{email: ["can't be blank"]}
     end

@@ -16,7 +16,7 @@ defmodule ElixirFormula.Users.Schemas.User do
     timestamps(type: :utc_datetime)
   end
 
-  def create_changeset(user, attrs \\ %{}) do
+  def changeset(user, attrs \\ %{}) do
     user
     |> cast(attrs, [:name, :nickname, :email, :image, :location, :is_admin])
     |> validate_required([:name, :nickname, :email, :image])

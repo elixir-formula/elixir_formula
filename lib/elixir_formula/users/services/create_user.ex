@@ -47,7 +47,7 @@ defmodule ElixirFormula.Users.Services.CreateUser do
 
   defp create_user(params) do
     %User{}
-    |> User.create_changeset(params)
+    |> User.changeset(params)
     |> Repo.insert()
   end
 end

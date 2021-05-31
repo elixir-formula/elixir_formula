@@ -21,9 +21,14 @@
               <%= img_tag(@current_user.image, class: "h-8 w-8 rounded-full") %>
             </button>
             <ul class="absolute right-0 hidden w-32 p-2 space-y-2 bg-white rounded-lg shadow-lg z-10" aria-label="submenu">
-              <li>
-                <%= link "Admin panel", to: Routes.monitoring_publications_path(@conn, :index), class: "inline-block w-full px-2 py-1 font-medium text-gray-600 transition-colors duration-150 rounded-md focus:outline-none focus:shadow-outline hover:bg-gray-100 hover:text-gray-900" %>
-              </li>
+              <%= if @current_user.is_admin do %>
+                <li>
+                  <%= live_redirect "Admin publications", to: Routes.monitoring_publications_path(@conn, :index), class: "inline-block w-full px-2 py-1 font-medium text-gray-600 transition-colors duration-150 rounded-md focus:outline-none focus:shadow-outline hover:bg-gray-100 hover:text-gray-900" %>
+                </li>
+                <li>
+                  <%= link "Dashboard", to: Routes.live_dashboard_path(@conn, :home), class: "inline-block w-full px-2 py-1 font-medium text-gray-600 transition-colors duration-150 rounded-md focus:outline-none focus:shadow-outline hover:bg-gray-100 hover:text-gray-900" %></li>
+                </li>
+              <% end %>
               <li>
                 <%= link "Log out", to: Routes.auth_path(@conn, :delete), method: "delete", class: "inline-block w-full px-2 py-1 font-medium text-gray-600 transition-colors duration-150 rounded-md focus:outline-none focus:shadow-outline hover:bg-gray-100 hover:text-gray-900" %>
               </li>
