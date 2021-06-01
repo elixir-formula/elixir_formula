@@ -45,7 +45,7 @@ defmodule ElixirFormula.Publications.Services.CreatePublication do
 
   defp create_publication(params) do
     %Publication{}
-    |> Publication.create_changeset(params)
+    |> Publication.changeset(params)
     |> Repo.insert()
   end
 

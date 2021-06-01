@@ -8,7 +8,8 @@ defmodule ElixirFormula.Publications do
   alias ElixirFormula.Publications.Services.{
     CreatePublication,
     GetPublication,
-    GetPublicationsList
+    GetPublicationsList,
+    UpdatePublication
   }
 
   @doc """
@@ -65,7 +66,7 @@ defmodule ElixirFormula.Publications do
         author_name: "john doe",
         source: "dev.to"
       })
-      {:ok, %Content{}}
+      {:ok, %Publication{}}
 
       iex> create_publication(%{
         title: "existing title",
@@ -81,4 +82,18 @@ defmodule ElixirFormula.Publications do
   """
   @spec create_publication(map()) :: {:ok, Publication.t()} | {:ok, nil} | {:error, Ecto.Changeset.t()}
   defdelegate create_publication(params), to: CreatePublication, as: :call
+
+  @doc """
+  Updates a publication
+
+  ## Examples
+
+      iex> update_publication(publication, %{status: :published})
+      {:ok, %Publication{}}
+
+      iex> update_publication(publication, %{title: ""})
+      {:error, %Ecto.Changeset{}}
+  """
+  @spec update_publication(Publication.t(), map()) :: {:ok, Publication.t()} | {:error, Ecto.Changeset.t()}
+  defdelegate update_publication(publication, params), to: UpdatePublication, as: :call
 end
