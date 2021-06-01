@@ -7,6 +7,7 @@ defmodule ElixirFormula.Publications do
 
   alias ElixirFormula.Publications.Services.{
     CreatePublication,
+    GetPublication,
     GetPublicationsList
   }
 
@@ -28,6 +29,20 @@ defmodule ElixirFormula.Publications do
   """
   @spec list_publications(map()) :: [Publication.t(), ...]
   defdelegate list_publications(params), to: GetPublicationsList, as: :call
+
+  @doc """
+  Returns publications by searching field.
+
+  ## Examples
+
+      iex> get_publication(:id, 1)
+      {:ok, %Publication{}}
+
+      iex> get_publication(:id, 0)
+      {:error, :publication_not_found}
+  """
+  @spec get_publication(atom(), integer() | binary()) :: {:ok, Publication.t()} | {:error, :publication_not_found}
+  defdelegate get_publication(field, value), to: GetPublication, as: :call
 
   @doc """
   Creates a publication
