@@ -1,10 +1,9 @@
-defmodule ElixirFormulaWeb.GetCurrentUser do
+defmodule ElixirFormulaWeb.Plugs.GetCurrentUser do
   @moduledoc false
   @behaviour Plug
   import Plug.Conn
 
   alias ElixirFormula.Users
-  alias ElixirFormula.Users.Schemas.User
 
   def init(opts), do: opts
 
@@ -19,7 +18,7 @@ defmodule ElixirFormulaWeb.GetCurrentUser do
 
   defp assign_current_user(conn, id) do
     case Users.get_user(:id, id) do
-      {:ok, %User{} = user} -> assign(conn, :current_user, user)
+      {:ok, user} -> assign(conn, :current_user, user)
       _ -> conn
     end
   end

@@ -13,11 +13,11 @@ defmodule ElixirFormulaWeb.Router do
   end
 
   pipeline :current_user do
-    plug ElixirFormulaWeb.GetCurrentUser
+    plug ElixirFormulaWeb.Plugs.GetCurrentUser
   end
 
   pipeline :admin do
-    plug ElixirFormulaWeb.AdminPlug
+    plug ElixirFormulaWeb.Plugs.AdminPlug
   end
 
   scope "/auth", ElixirFormulaWeb do

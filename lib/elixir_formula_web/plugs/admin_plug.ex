@@ -1,4 +1,4 @@
-defmodule ElixirFormulaWeb.AdminPlug do
+defmodule ElixirFormulaWeb.Plugs.AdminPlug do
   @moduledoc false
 
   @behaviour Plug
