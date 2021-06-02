@@ -22,7 +22,7 @@ config :elixir_formula, ElixirFormulaWeb.Endpoint,
       "node_modules/webpack/bin/webpack.js",
       "--mode",
       "development",
-      "--watch-stdin",
+      "--watch-poll",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]

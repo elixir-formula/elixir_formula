@@ -8,26 +8,35 @@ defmodule ElixirFormulaWeb.Monitoring.PublicationsLive.Index do
   alias ElixirFormula.Publications.Schemas.Publication
 
   def mount(_params, session, socket) do
-    socket = assign_user(session, socket)
+    socket =
+      socket
+      |> assign_user(session)
+      |> assign_publications()
+
     {:ok, socket, temporary_assigns: [publications: []]}
   end
 
-  def handle_params(params, _url, socket) do
-    page = String.to_integer(params["page"] || "1")
+  def handle_event("publish", %{"id" => id}, socket) do
+    with {:ok, publication} <- Publications.get_publication(:id, id),
+         {:ok, _publication} <- Publications.update_publication(publication, %{status: :published}) do
+      {:noreply, assign_publications(socket)}
+    end
+  end
 
-    %{entries: publications, total_pages: total_pages} = Publications.list_publications(%{status: :pending, page: page})
-
-    socket =
-      assign(socket,
-        current_page: page,
-        total_pages: total_pages,
-        publications: publications
-      )
-
-    {:noreply, socket}
+  def handle_event("reject", %{"id" => id}, socket) do
+    with {:ok, publication} <- Publications.get_publication(:id, id),
+         {:ok, _publication} <- Publications.update_publication(publication, %{status: :rejected}) do
+      {:noreply, assign_publications(socket)}
+    end
   end
 
   # Helpers
+
+  defp assign_publications(socket) do
+    %{entries: publications} = Publications.list_publications(%{status: :pending, page: 1})
+
+    assign(socket, publications: publications)
+  end
 
   defp publication_tags(%Publication{tags: tags}) do
     tags

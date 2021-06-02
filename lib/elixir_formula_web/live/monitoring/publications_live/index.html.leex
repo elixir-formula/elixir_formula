@@ -1,13 +1,10 @@
 <div class="relative bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
   <div class="text-center">
     <h2 class="text-4xl leading-10 tracking-tight font-extrabold text-gray-900">
-      Elixir Formula
+      Publications admin page
     </h2>
-    <p class="mt-5 max-w-2xl mx-auto text-xl leading-7 text-gray-500">
-      News blogs aggregator from the world of elixir lang.
-    </p>
   </div>
-  <div class="max-w-7xl mx-auto mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+  <div class="max-w-4xl mx-auto mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-1">
     <%= for publication <- @publications do %>
       <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
         <div class="flex-shrink-0">
@@ -28,7 +25,14 @@
             </p>
           </div>
           <div class="grid gap-2 grid-cols-2 mt-6 flex items-center">
-            <div class="leading-5 text-gray-500"></div>
+            <div class="leading-5 text-gray-500">
+              <button phx-click="publish" phx-value-id="<%= publication.id %>" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                Publish
+              </button>
+              <button phx-click="reject" phx-value-id="<%= publication.id %>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                Reject
+              </button>
+            </div>
             <div class="ml-3">
               <div class="flex text-sm leading-5 text-gray-500 justify-end">
                 <p class="text-sm leading-5 font-medium text-gray-900">
