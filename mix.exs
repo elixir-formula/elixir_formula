@@ -66,9 +66,6 @@ defmodule ElixirFormula.MixProject do
       # Web server
       {:plug_cowboy, "~> 2.0"},
 
-      # Date/time library
-      {:timex, "~> 3.6"},
-
       # Database adapter
       {:postgrex, ">= 0.0.0"},
 

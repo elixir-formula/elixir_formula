@@ -36,6 +36,6 @@ defmodule ElixirFormulaWeb.PublicationsLive.Index do
   end
 
   defp published_at(%Publication{inserted_at: inserted_at}) do
-    Timex.format!(inserted_at, "%b %d, %Y", :strftime)
+    Calendar.strftime(inserted_at, "%b %d, %Y")
   end
 end
