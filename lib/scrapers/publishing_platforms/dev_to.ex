@@ -4,6 +4,9 @@ defmodule Scrapers.PublishingPlatforms.DevTo do
   """
   use Scrapers.Interface
 
+  def articles_selector(),
+    do: "div.crayons-story"
+
   def article_author(article) do
     article
     |> Floki.find("p > a.crayons-story__secondary.fw-medium")

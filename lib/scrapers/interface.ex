@@ -16,7 +16,7 @@ defmodule Scrapers.Interface do
 
       use GenServer
 
-      alias ElixirFormula.Publications
+      alias ElixirFormula.{Monitoring, Publications}
 
       @interval 3_600_000
 
@@ -38,6 +38,7 @@ defmodule Scrapers.Interface do
         |> create_request()
         |> parse_html()
         |> get_articles()
+        |> update_status()
         |> Enum.each(&process_article/1)
 
         :erlang.send_after(interval, self(), :process_resource)
@@ -53,12 +54,26 @@ defmodule Scrapers.Interface do
         do: Floki.parse_document(response.body)
 
       def get_articles({:ok, document}),
-        do: Floki.find(document, "div.crayons-story")
+        do: Floki.find(document, articles_selector())
 
       def process_article(article) do
         article
         |> build_params()
         |> Publications.create_publication()
+      end
+
+      def update_status([] = articles) do
+        with {:ok, scraper_status} <- Monitoring.get_scraper_status(:source, article_source()),
+             {:ok, _} <- Monitoring.update_scraper_status(scraper_status, %{status: :inactive}) do
+          articles
+        end
+      end
+
+      def update_status(articles) do
+        with {:ok, scraper_status} <- Monitoring.get_scraper_status(:source, article_source()),
+             {:ok, _} <- Monitoring.update_scraper_status(scraper_status, %{status: :active}) do
+          articles
+        end
       end
 
       def build_params(article) do

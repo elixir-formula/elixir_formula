@@ -23,12 +23,12 @@ defmodule ElixirFormula.Publications do
   ## Examples
 
       iex> list_publications(%{})
-      %Scrivener.Page[%Publication{}, ]
+      %Scrivener.Page{entries: [%Publication{}, ...], page_number: 1, page_size: 10, total_entries: 2, total_pages: 1}
 
       iex> list_publications(%{status: :pending, page: 2})
-      %Scrivener.Page{entries: [%Publication{}, ...], page_number: 2, page_size: 10, total_entries: 2, total_pages: 1}
+      %Scrivener.Page{entries: [%Publication{status: "pernding"}, ...], page_number: 2, page_size: 10, total_entries: 15, total_pages: 2}
   """
-  @spec list_publications(map()) :: [Publication.t(), ...]
+  @spec list_publications(map()) :: Scrivener.Page.t()
   defdelegate list_publications(params), to: GetPublicationsList, as: :call
 
   @doc """
