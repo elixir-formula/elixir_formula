@@ -33,7 +33,8 @@ defmodule ElixirFormula.Monitoring do
       iex> get_scraper_status(:id, 0)
       {:error, :scraper_status_not_found}
   """
-  @spec get_scraper_status(atom(), integer() | binary()) :: {:ok, ScraperStatus.t()} | {:error, :scraper_status_not_found}
+  @spec get_scraper_status(atom(), integer() | binary()) ::
+          {:ok, ScraperStatus.t()} | {:error, :scraper_status_not_found}
   defdelegate get_scraper_status(field, value), to: GetScraperStatus, as: :call
 
   @doc """

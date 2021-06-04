@@ -64,14 +64,22 @@ defmodule Scrapers.Interface do
 
       def update_status([] = articles) do
         with {:ok, scraper_status} <- Monitoring.get_scraper_status(:source, article_source()),
-             {:ok, _} <- Monitoring.update_scraper_status(scraper_status, %{status: :inactive}) do
+             {:ok, _} <-
+               Monitoring.update_scraper_status(scraper_status, %{
+                 status: :inactive,
+                 jobs_count: scraper_status.jobs_count + 1
+               }) do
           articles
         end
       end
 
       def update_status(articles) do
         with {:ok, scraper_status} <- Monitoring.get_scraper_status(:source, article_source()),
-             {:ok, _} <- Monitoring.update_scraper_status(scraper_status, %{status: :active}) do
+             {:ok, _} <-
+               Monitoring.update_scraper_status(scraper_status, %{
+                 status: :active,
+                 jobs_count: scraper_status.jobs_count + 1
+               }) do
           articles
         end
       end

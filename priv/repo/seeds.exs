@@ -13,10 +13,16 @@
 alias ElixirFormula.Repo
 alias ElixirFormula.Monitoring.Schemas.ScraperStatus
 
-Repo.insert(%ScraperStatus{
-  source: "dev.to"
-}, on_conflict: :nothing)
+Repo.insert(
+  %ScraperStatus{
+    source: "dev.to"
+  },
+  on_conflict: :nothing
+)
 
-Repo.insert(%ScraperStatus{
-  source: "curiosum"
-}, on_conflict: :nothing)
+Repo.insert(
+  %ScraperStatus{
+    source: "curiosum.dev"
+  },
+  on_conflict: :nothing
+)

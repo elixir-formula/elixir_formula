@@ -1,0 +1,32 @@
+<div class="relative bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="text-center">
+    <h2 class="text-4xl leading-10 tracking-tight font-extrabold text-gray-900">
+      Scraper statuses
+    </h2>
+  </div>
+  <div class="max-w-4xl mx-auto mt-12 grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+    <%= for scraper_status <- @scraper_statuses do %>
+      <div class="min-w-0 rounded-lg shadow-xs overflow-hidden bg-white dark:bg-gray-800">
+        <div class="p-4 flex items-center">
+          <%= if scraper_status.status == :active do %>
+            <div class="p-3 rounded-full text-green-500 dark:text-green-100 bg-green-100 dark:bg-green-500 mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path class="heroicon-ui" d="M20 15a1 1 0 002 0V7a1 1 0 00-1-1h-8a1 1 0 000 2h5.59L13 13.59l-3.3-3.3a1 1 0 00-1.4 0l-6 6a1 1 0 001.4 1.42L9 12.4l3.3 3.3a1 1 0 001.4 0L20 9.4V15z"/></svg>
+            </div>
+          <% else %>
+            <div class="p-3 rounded-full text-red-500 dark:text-red-100 bg-red-100 dark:bg-red-500 mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path class="heroicon-ui" d="M20 9a1 1 0 012 0v8a1 1 0 01-1 1h-8a1 1 0 010-2h5.59L13 10.41l-3.3 3.3a1 1 0 01-1.4 0l-6-6a1 1 0 011.4-1.42L9 11.6l3.3-3.3a1 1 0 011.4 0l6.3 6.3V9z"/></svg>
+            </div>
+          <% end %>
+          <div>
+            <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+              <%= scraper_status.source %>
+            </p>
+            <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
+              <%= scraper_status.jobs_count %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

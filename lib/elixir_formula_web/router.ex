@@ -37,7 +37,8 @@ defmodule ElixirFormulaWeb.Router do
   scope "/monitoring", ElixirFormulaWeb.Monitoring do
     pipe_through [:browser, :current_user, :admin]
 
-    live "/", PublicationsLive.Index, :index, as: "monitoring_publications"
+    live "/", PublicationsLive.Index, :index, as: :monitoring_publications
+    live "/statuses", ScraperStatusesLive.Index, :index, as: :monitoring_statuses
     live_dashboard "/dashboard", metrics: ElixirFormulaWeb.Telemetry
   end
 end

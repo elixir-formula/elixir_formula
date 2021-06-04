@@ -4,7 +4,7 @@ defmodule Scrapers.PublishingPlatforms.DevTo do
   """
   use Scrapers.Interface
 
-  def articles_selector(),
+  def articles_selector,
     do: "div.crayons-story"
 
   def article_author(article) do
