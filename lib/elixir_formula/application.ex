@@ -18,7 +18,13 @@ defmodule ElixirFormula.Application do
       # Start the Endpoint (http/https)
       ElixirFormulaWeb.Endpoint,
       # Start the Scrapers supervisor
-      Scrapers.Supervisor
+      Scrapers.Supervisor,
+      # Start Finch
+      {Finch,
+       name: ElixirFormula.Finch,
+       pools: %{
+         :default => [size: 10, count: 2]
+       }}
       # Start a worker by calling: ElixirFormula.Worker.start_link(arg)
       # {ElixirFormula.Worker, arg}
     ]

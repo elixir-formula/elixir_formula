@@ -48,7 +48,7 @@ defmodule Scrapers.Interface do
       # Processing
 
       def create_request(resource),
-        do: HTTPoison.get(resource)
+        do: Finch.build(:get, resource) |> Finch.request(ElixirFormula.Finch)
 
       def parse_html({:ok, response}),
         do: Floki.parse_document(response.body)

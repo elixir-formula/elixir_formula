@@ -30,6 +30,37 @@ defmodule ElixirFormulaWeb.Telemetry do
         tags: [:route],
         unit: {:native, :millisecond}
       ),
+      # Finch Metrics
+      summary("finch.connect.stop.duration",
+        unit: {:native, :millisecond},
+        tag: [:shp],
+        tag_values: &shp/1
+      ),
+      summary("finch.queue.exception.duration",
+        unit: {:native, :millisecond},
+        tag: [:shp],
+        tag_values: &shp/1
+      ),
+      summary("finch.queue.stop.idle_time",
+        unit: {:native, :millisecond},
+        tag: [:shp],
+        tag_values: &shp/1
+      ),
+      summary("finch.queue.stop.duration",
+        unit: {:native, :millisecond},
+        tag: [:shp],
+        tag_values: &shp/1
+      ),
+      summary("finch.request.stop.duration",
+        unit: {:native, :millisecond},
+        tag: [:shp],
+        tag_values: &shp/1
+      ),
+      summary("finch.response.stop.duration",
+        unit: {:native, :millisecond},
+        tag: [:shp],
+        tag_values: &shp/1
+      ),
 
       # Database Metrics
       summary("elixir_formula.repo.query.total_time", unit: {:native, :millisecond}),
@@ -53,4 +84,6 @@ defmodule ElixirFormulaWeb.Telemetry do
       # {ElixirFormulaWeb, :count_users, []}
     ]
   end
+
+  defp shp(%{scheme: scheme, host: host, port: port}), do: "#{scheme}://#{host}:#{port}"
 end

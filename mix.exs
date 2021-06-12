@@ -61,7 +61,7 @@ defmodule ElixirFormula.MixProject do
       {:floki, "~> 0.30.0"},
 
       # HTTP client
-      {:httpoison, "~> 1.8"},
+      {:finch, "~> 0.7"},
 
       # Web server
       {:plug_cowboy, "~> 2.0"},
