@@ -72,6 +72,9 @@ defmodule ElixirFormula.MixProject do
       # Pagination library
       {:scrivener_ecto, "~> 2.0"},
 
+      # Telegram bot API wrapper
+      {:nadia, "~> 0.7.0"},
+
       # Github auth
       {:ueberauth, "~> 0.6"},
       {:ueberauth_github, "~> 0.7"},
@@ -79,6 +82,7 @@ defmodule ElixirFormula.MixProject do
       # Testing tools
       {:ex_machina, "~> 2.7.0", only: :test},
       {:excoveralls, "~> 0.14.0", only: :test},
+      {:mock, "~> 0.3.7", only: :test},
 
       # Static code analysis
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false}

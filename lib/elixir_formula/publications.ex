@@ -9,6 +9,7 @@ defmodule ElixirFormula.Publications do
     CreatePublication,
     GetPublication,
     GetPublicationsList,
+    PublishPublication,
     UpdatePublication
   }
 
@@ -96,4 +97,12 @@ defmodule ElixirFormula.Publications do
   """
   @spec update_publication(Publication.t(), map()) :: {:ok, Publication.t()} | {:error, Ecto.Changeset.t()}
   defdelegate update_publication(publication, params), to: UpdatePublication, as: :call
+
+  @doc """
+  Publish a publication
+
+
+  """
+  @spec publish_publication(Publication.t()) :: {:ok, Nadia.Model.Message.t()}
+  defdelegate publish_publication(publication), to: PublishPublication, as: :call
 end

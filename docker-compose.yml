@@ -13,7 +13,7 @@ services:
       - 4000:4000
     stdin_open: true
     tty: true
-    command: mix phx.server
+    command: iex -S mix phx.server
     volumes:
       - .:/elixir_formula:cached
       - static:/elixir_formula/priv/static
