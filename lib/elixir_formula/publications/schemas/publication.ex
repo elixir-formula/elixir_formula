@@ -14,13 +14,15 @@ defmodule ElixirFormula.Publications.Schemas.Publication do
     field :author_name, :string
     field :status, Ecto.Enum, values: @statuses, default: :pending, null: false
     field :source, :string
+    field :description, :string
+    field :image_url, :string
 
     timestamps(type: :utc_datetime)
   end
 
   def changeset(publication, attrs \\ %{}) do
     publication
-    |> cast(attrs, [:title, :url, :tags, :author_name, :source, :status])
+    |> cast(attrs, [:title, :url, :tags, :author_name, :source, :status, :description, :image_url])
     |> validate_required([:title, :url, :author_name, :source])
   end
 end
