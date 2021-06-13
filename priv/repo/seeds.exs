@@ -17,12 +17,14 @@ Repo.insert(
   %ScraperStatus{
     source: "dev.to"
   },
-  on_conflict: :nothing
+  on_conflict: :replace_all,
+  conflict_target: :source
 )
 
 Repo.insert(
   %ScraperStatus{
-    source: "curiosum.dev"
+    source: "curiosum.com"
   },
-  on_conflict: :nothing
+  on_conflict: :replace_all,
+  conflict_target: :source
 )

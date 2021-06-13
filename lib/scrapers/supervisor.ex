@@ -2,6 +2,7 @@ defmodule Scrapers.Supervisor do
   @moduledoc false
   use Supervisor
 
+  alias Scrapers.CompaniesBlogs
   alias Scrapers.PublishingPlatforms
 
   def start_link(arg) do
@@ -11,6 +12,8 @@ defmodule Scrapers.Supervisor do
   @impl true
   def init(_arg) do
     children = [
+      CompaniesBlogs.Curiosum,
+
       PublishingPlatforms.DevTo
     ]
 
