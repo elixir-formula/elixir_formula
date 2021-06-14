@@ -5,7 +5,7 @@ defmodule ElixirFormula.Publications.Services.CreatePublicationTest do
   alias ElixirFormula.Publications.Services.CreatePublication
 
   setup do
-    publication = insert(:publication, title: "elixir", author_name: "lady gaga")
+    publication = insert(:publication, title: "elixir", author_name: "lady gaga", source: "dev.to")
 
     base_params = %{
       title: "Elixir article",
@@ -33,7 +33,7 @@ defmodule ElixirFormula.Publications.Services.CreatePublicationTest do
 
   describe "when publication already exists" do
     test "returns {:ok, nil}", %{base_params: base_params} do
-      base_params = Map.merge(base_params, %{title: "elixir", author_name: "lady gaga"})
+      base_params = Map.merge(base_params, %{title: "elixir", author_name: "lady gaga", source: "dev.to"})
       assert {:ok, nil} = CreatePublication.call(base_params)
     end
   end

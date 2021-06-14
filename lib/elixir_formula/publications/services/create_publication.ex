@@ -11,6 +11,7 @@ defmodule ElixirFormula.Publications.Services.CreatePublication do
   Checking markers that publication is unique:
   - title
   - author name
+  - source
 
   ## Examples
 
@@ -36,8 +37,8 @@ defmodule ElixirFormula.Publications.Services.CreatePublication do
       {:error, %Ecto.Changeset{}}
   """
   @spec call(map()) :: {:ok, Publication.t()} | {:ok, nil} | {:error, Ecto.Changeset.t()}
-  def call(%{title: title, author_name: author_name} = params) do
-    case publication_exists?(title, author_name) do
+  def call(%{title: title, author_name: author_name, source: source} = params) do
+    case publication_exists?(title, author_name, source) do
       true -> {:ok, nil}
       false -> create_publication(params)
     end
@@ -49,9 +50,9 @@ defmodule ElixirFormula.Publications.Services.CreatePublication do
     |> Repo.insert()
   end
 
-  defp publication_exists?(title, author_name) do
+  defp publication_exists?(title, author_name, source) do
     Publication
-    |> where([p], p.title == ^title and p.author_name == ^author_name)
+    |> where([p], p.title == ^title and p.author_name == ^author_name and p.source == ^source)
     |> Repo.exists?()
   end
 end
