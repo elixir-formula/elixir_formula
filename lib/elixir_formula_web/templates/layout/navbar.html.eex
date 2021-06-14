@@ -18,7 +18,7 @@
         <%= if @current_user do %>
           <div class="relative flex-shrink-0 dropdown:block">
             <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-              <%= img_tag(@current_user.image, class: "h-8 w-8 rounded-full") %>
+              <%= img_tag @current_user.image, class: "h-8 w-8 rounded-full" %>
             </button>
             <ul class="absolute right-0 hidden w-32 p-2 space-y-2 bg-white rounded-lg shadow-lg z-10" aria-label="submenu">
               <%= if @current_user.is_admin do %>
@@ -38,7 +38,12 @@
             </ul>
           </div>
         <% else %>
-          <%= link "Login", to: Routes.auth_path(@conn, :request, "github"), class: "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" %>
+          <%= link to: Routes.auth_path(@conn, :request, "github"), class: "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" do %>
+            <span>Sign in</span>
+            <span class="ml-2">
+              <i class="fab fa-github fa-lg"></i>
+            </span>
+          <% end %>
         <% end %>
       </div>
     </div>
