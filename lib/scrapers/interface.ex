@@ -5,6 +5,8 @@ defmodule Scrapers.Interface do
 
   @callback article_author(article :: tuple()) :: binary()
   @callback article_title(article :: tuple()) :: binary()
+  @callback article_description(article :: tuple()) :: binary()
+  @callback article_image_url(article :: tuple()) :: binary()
   @callback article_tags(article :: tuple()) :: list()
   @callback article_url(article :: tuple()) :: binary()
   @callback article_source() :: binary()
@@ -58,6 +60,9 @@ defmodule Scrapers.Interface do
 
       def process_article(article) do
         article
+        |> post_url()
+        |> create_request()
+        |> parse_html()
         |> build_params()
         |> Publications.create_publication()
       end
@@ -84,10 +89,12 @@ defmodule Scrapers.Interface do
         end
       end
 
-      def build_params(article) do
+      def build_params({:ok, article}) do
         %{
           title: article_title(article),
           url: article_url(article),
+          description: article_description(article),
+          image_url: article_image_url(article),
           tags: article_tags(article),
           author_name: article_author(article),
           source: article_source()

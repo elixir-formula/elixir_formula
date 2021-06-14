@@ -4,21 +4,55 @@ defmodule Scrapers.PublishingPlatforms.DevTo do
   """
   use Scrapers.Interface
 
+  # articles processing
+
+  def resource,
+    do: "https://dev.to/t/elixir/latest"
+
+  def article_source,
+    do: "dev.to"
+
   def articles_selector,
     do: "div.crayons-story"
 
+  def post_url(article) do
+    url =
+      article
+      |> Floki.find("h2.crayons-story__title > a")
+      |> Floki.attribute("href")
+      |> Floki.text()
+
+    "https://dev.to" <> url
+  end
+
+  # single article processing
+
   def article_author(article) do
     article
-    |> Floki.find("p > a.crayons-story__secondary.fw-medium")
+    |> Floki.find("div.crayons-article__subheader > a")
     |> Floki.text()
     |> String.trim()
   end
 
+  def article_image_url(article) do
+    article
+    |> Floki.find("meta[property='og:image']")
+    |> Floki.attribute("content")
+    |> Floki.text()
+  end
+
+  def article_description(article) do
+    article
+    |> Floki.find("meta[property='og:description']")
+    |> Floki.attribute("content")
+    |> Floki.text()
+  end
+
   def article_title(article) do
     article
-    |> Floki.find("h2.crayons-story__title")
+    |> Floki.find("meta[property='og:title']")
+    |> Floki.attribute("content")
     |> Floki.text()
-    |> String.trim()
   end
 
   def article_tags(article) do
@@ -29,16 +63,9 @@ defmodule Scrapers.PublishingPlatforms.DevTo do
   end
 
   def article_url(article) do
-    url =
-      article
-      |> Floki.find("h2.crayons-story__title > a")
-      |> Floki.attribute("href")
-      |> Floki.text()
-
-    "https://dev.to" <> url
+    article
+    |> Floki.find("meta[property='og:url']")
+    |> Floki.attribute("content")
+    |> Floki.text()
   end
-
-  def article_source, do: "dev.to"
-
-  def resource, do: "https://dev.to/t/elixir/latest"
 end
