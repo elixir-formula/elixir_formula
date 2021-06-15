@@ -9,7 +9,7 @@ stages:
   - test
 
 .elixir_default: &elixir_default
-  image: bitwalker/alpine-elixir:1.11.4
+  image: bitwalker/alpine-elixir:1.11.0
   before_script:
     - mix local.hex --force
     - mix local.rebar --force
@@ -27,7 +27,7 @@ elixir_compile:
       - deps
   script:
     - apk update
-    - apk add alpine-sdk postgresql-client
+    - apk add alpine-sdk
     - mix deps.get --only test
     - mix compile --warnings-as-errors
 
