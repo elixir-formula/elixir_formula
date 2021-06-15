@@ -13,7 +13,6 @@ defmodule Scrapers.Supervisor do
   def init(_arg) do
     children = [
       CompaniesBlogs.Curiosum,
-
       PublishingPlatforms.DevTo
     ]
 
