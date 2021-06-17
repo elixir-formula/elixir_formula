@@ -1,34 +1,33 @@
-defmodule Scrapers.CompaniesBlogs.AppSignal do
+defmodule Scrapers.CompaniesBlogs.ErlangSolutions do
   @moduledoc """
-  AppSignal.com scrapper implementation.
+  Erlang-solutions.com scrapper implementation.
   """
   use Scrapers.Interface
 
   # articles processing
 
   def resource,
-    do: "https://blog.appsignal.com/category/elixir.html"
+    do: "https://www.erlang-solutions.com/blog/"
 
   def article_source,
-    do: "appsignal.com"
+    do: "erlang-solutions.com"
 
   def articles_selector,
-    do: "article.mod-preview"
+    do: "div.grid-card.col-sm-6.col-lg-4"
 
   def article_url(article) do
-    url =
-      article
-      |> Floki.find("a.opacity_6")
-      |> Floki.attribute("href")
-      |> Floki.text()
-
-    "https://blog.appsignal.com/" <> url
+    article
+    |> Floki.find("a.link-to-all")
+    |> Floki.attribute("href")
+    |> Floki.text()
   end
 
   # single article processing
 
   def article_author(article) do
-    article |> Floki.find("p.meta") |> Floki.text() |> String.trim() |> String.split("\n") |> hd()
+    article
+    |> Floki.find("div.post-info__author > a")
+    |> Floki.text()
   end
 
   def article_image_url(article) do
@@ -52,7 +51,11 @@ defmodule Scrapers.CompaniesBlogs.AppSignal do
     |> Floki.text()
   end
 
-  def article_tags(_article) do
-    ["elixir"]
+  def article_tags(article) do
+    article
+    |> Floki.find("a.category")
+    |> Floki.text()
+    |> String.downcase()
+    |> List.wrap()
   end
 end

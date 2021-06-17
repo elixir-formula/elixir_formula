@@ -18,6 +18,7 @@ defmodule Scrapers.Supervisor do
       # CompaniesBlogs.Curiosum,
       # CompaniesBlogs.Dashbit,
       # CompaniesBlogs.Dockyard
+      CompaniesBlogs.ErlangSolutions
 
       # PersonalBlogs.ElixirLang
 

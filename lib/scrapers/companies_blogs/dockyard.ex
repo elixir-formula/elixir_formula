@@ -60,6 +60,6 @@ defmodule Scrapers.CompaniesBlogs.Dockyard do
     |> Floki.text()
     |> String.split("\n")
     |> Enum.map(&String.trim/1)
-    |> Enum.filter(&byte_size(&1) != 0)
+    |> Enum.filter(&(byte_size(&1) != 0))
   end
 end
