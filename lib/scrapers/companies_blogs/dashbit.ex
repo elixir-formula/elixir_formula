@@ -34,7 +34,7 @@ defmodule Scrapers.CompaniesBlogs.Dashbit do
     |> String.trim()
   end
 
-  def article_image_url(article) do
+  def article_image_url(_article) do
     "https://d32myzxfxyl12w.cloudfront.net/images/blog_images/1145e4a9d0a56c29e4eb3ffbdbaa0362299e8e8f.png?1540465745"
   end
 

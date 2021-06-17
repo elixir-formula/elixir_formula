@@ -52,11 +52,10 @@ defmodule Scrapers.CompaniesBlogs.CarbonFive do
     |> Floki.text()
   end
 
-  def article_tags(_article) do
+  def article_tags(article) do
     article
     |> Floki.find("div.level-left > a")
-    |> Floki.text()
-    |> String.split(~r{(?=[A-Z])})
-    |> Enum.filter(&byte_size(&1) != 0)
+    |> Floki.text(sep: " ")
+    |> String.split(" ")
   end
 end

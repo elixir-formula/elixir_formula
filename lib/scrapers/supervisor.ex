@@ -13,9 +13,9 @@ defmodule Scrapers.Supervisor do
   def init(_arg) do
     children = [
       # CompaniesBlogs.AppSignal,
-      # CompaniesBlogs.CarbonFive
+      CompaniesBlogs.CarbonFive
       # CompaniesBlogs.Curiosum,
-      CompaniesBlogs.Dashbit
+      # CompaniesBlogs.Dashbit,
 
       # PublishingPlatforms.DevTo
     ]
