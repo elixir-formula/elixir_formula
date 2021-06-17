@@ -50,6 +50,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "elixir-lang.org"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "dev.to"
   },
   on_conflict: :nothing

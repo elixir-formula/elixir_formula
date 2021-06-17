@@ -3,6 +3,7 @@ defmodule Scrapers.Supervisor do
   use Supervisor
 
   alias Scrapers.CompaniesBlogs
+  alias Scrapers.PersonalBlogs
   alias Scrapers.PublishingPlatforms
 
   def start_link(arg) do
@@ -16,7 +17,9 @@ defmodule Scrapers.Supervisor do
       # CompaniesBlogs.CarbonFive
       # CompaniesBlogs.Curiosum,
       # CompaniesBlogs.Dashbit,
-      CompaniesBlogs.Dockyard
+      # CompaniesBlogs.Dockyard
+
+      # PersonalBlogs.ElixirLang
 
       # PublishingPlatforms.DevTo
     ]
