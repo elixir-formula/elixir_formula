@@ -12,7 +12,8 @@ defmodule Scrapers.Supervisor do
   @impl true
   def init(_arg) do
     children = [
-      CompaniesBlogs.AppSignal,
+      # CompaniesBlogs.AppSignal,
+      CompaniesBlogs.CarbonFive
       # CompaniesBlogs.Curiosum,
 
       # PublishingPlatforms.DevTo
