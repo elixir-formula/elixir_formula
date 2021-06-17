@@ -15,7 +15,7 @@ defmodule Scrapers.CompaniesBlogs.Curiosum do
   def articles_selector,
     do: "article.blog-card"
 
-  def post_url(article) do
+  def article_url(article) do
     url =
       article
       |> Floki.find("div.blog-card__content > a")
@@ -58,12 +58,5 @@ defmodule Scrapers.CompaniesBlogs.Curiosum do
 
   def article_tags(_article) do
     ["elixir"]
-  end
-
-  def article_url(article) do
-    article
-    |> Floki.find("meta[property='og:url']")
-    |> Floki.attribute("content")
-    |> Floki.text()
   end
 end

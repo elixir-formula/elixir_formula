@@ -15,7 +15,7 @@ defmodule Scrapers.CompaniesBlogs.CarbonFive do
   def articles_selector,
     do: "div.columns > div.column > div.card"
 
-  def post_url(article) do
+  def article_url(article) do
     article
     |> Floki.find("div.card-content > a")
     |> Floki.attribute("href")
@@ -58,12 +58,5 @@ defmodule Scrapers.CompaniesBlogs.CarbonFive do
     |> Floki.text()
     |> String.split(~r{(?=[A-Z])})
     |> Enum.filter(&byte_size(&1) != 0)
-  end
-
-  def article_url(article) do
-    article
-    |> Floki.find("meta[property='og:url']")
-    |> Floki.attribute("content")
-    |> Floki.text()
   end
 end

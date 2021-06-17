@@ -59,11 +59,12 @@ defmodule Scrapers.Interface do
         do: Floki.find(document, articles_selector())
 
       def process_article(article) do
-        article
-        |> post_url()
+        article_url = article_url(article)
+
+        article_url
         |> create_request()
         |> parse_html()
-        |> build_params()
+        |> build_params(article_url)
         |> Publications.create_publication()
       end
 
@@ -89,10 +90,10 @@ defmodule Scrapers.Interface do
         end
       end
 
-      def build_params({:ok, article}) do
+      def build_params({:ok, article}, article_url) do
         %{
           title: article_title(article),
-          url: article_url(article),
+          url: article_url,
           description: article_description(article),
           image_url: article_image_url(article),
           tags: article_tags(article),

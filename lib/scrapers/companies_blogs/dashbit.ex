@@ -1,64 +1,60 @@
-defmodule Scrapers.PublishingPlatforms.DevTo do
+defmodule Scrapers.CompaniesBlogs.Dashbit do
   @moduledoc """
-  Dev.to scrapper implementation.
+  Dashbit.co scrapper implementation.
   """
   use Scrapers.Interface
 
   # articles processing
 
   def resource,
-    do: "https://dev.to/t/elixir/latest"
+    do: "https://dashbit.co/blog"
 
   def article_source,
-    do: "dev.to"
+    do: "dashbit.co"
 
   def articles_selector,
-    do: "div.crayons-story"
+    do: "div.blog"
 
   def article_url(article) do
     url =
       article
-      |> Floki.find("h2.crayons-story__title > a")
+      |> Floki.find("h1 > a.text-dark")
       |> Floki.attribute("href")
       |> Floki.text()
 
-    "https://dev.to" <> url
+    "https://dashbit.co" <> url
   end
 
   # single article processing
 
   def article_author(article) do
     article
-    |> Floki.find("div.crayons-article__subheader > a")
+    |> Floki.find("li.user")
     |> Floki.text()
     |> String.trim()
   end
 
   def article_image_url(article) do
-    article
-    |> Floki.find("meta[property='og:image']")
-    |> Floki.attribute("content")
-    |> Floki.text()
+    "https://d32myzxfxyl12w.cloudfront.net/images/blog_images/1145e4a9d0a56c29e4eb3ffbdbaa0362299e8e8f.png?1540465745"
   end
 
   def article_description(article) do
     article
-    |> Floki.find("meta[property='og:description']")
+    |> Floki.find("meta[name='description']")
     |> Floki.attribute("content")
     |> Floki.text()
   end
 
   def article_title(article) do
     article
-    |> Floki.find("meta[property='og:title']")
-    |> Floki.attribute("content")
+    |> Floki.find("article > h1")
     |> Floki.text()
   end
 
   def article_tags(article) do
     article
-    |> Floki.find("a.crayons-tag")
-    |> Floki.text()
-    |> String.split("#", trim: true)
+    |> Floki.find("li.date > a.text-primary")
+    |> Floki.text(sep: " ")
+    |> String.split(" ")
   end
 end

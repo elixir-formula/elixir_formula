@@ -15,7 +15,7 @@ defmodule Scrapers.CompaniesBlogs.AppSignal do
   def articles_selector,
     do: "article.mod-preview"
 
-  def post_url(article) do
+  def article_url(article) do
     url =
       article
       |> Floki.find("a.opacity_6")
@@ -58,12 +58,5 @@ defmodule Scrapers.CompaniesBlogs.AppSignal do
 
   def article_tags(_article) do
     ["elixir"]
-  end
-
-  def article_url(article) do
-    article
-    |> Floki.find("meta[property='og:url']")
-    |> Floki.attribute("content")
-    |> Floki.text()
   end
 end
