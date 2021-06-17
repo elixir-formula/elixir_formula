@@ -4,7 +4,7 @@ defmodule ElixirFormula.Repo.Migrations.AddDescriptionAndImageUrlToPublications 
   def change do
     alter table(:publications) do
       add :description, :string
-      add :image_url, :string
+      add :image_url, :text
     end
   end
 end

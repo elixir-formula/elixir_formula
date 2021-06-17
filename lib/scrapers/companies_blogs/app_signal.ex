@@ -1,38 +1,38 @@
-defmodule Scrapers.CompaniesBlogs.Curiosum do
+defmodule Scrapers.CompaniesBlogs.AppSignal do
   @moduledoc """
-  Curiosum.com scrapper implementation.
+  AppSignal.com scrapper implementation.
   """
   use Scrapers.Interface
 
   # articles processing
 
   def resource,
-    do: "https://curiosum.com/blog/category/elixir"
+    do: "https://blog.appsignal.com/category/elixir.html"
 
   def article_source,
-    do: "curiosum.com"
+    do: "appsignal.com"
 
   def articles_selector,
-    do: "article.blog-card"
+    do: "article.mod-preview"
 
   def post_url(article) do
     url =
       article
-      |> Floki.find("div.blog-card__content > a")
+      |> Floki.find("a.opacity_6")
       |> Floki.attribute("href")
       |> Floki.text()
 
-    "https://curiosum.com" <> url
+    "https://blog.appsignal.com/" <> url
   end
 
   # single article processing
 
   def article_author(article) do
     article
-    |> Floki.find("div.blog-card__author-name")
-    |> hd()
+    |> Floki.find("p.meta")
     |> Floki.text()
     |> String.trim()
+    |> String.split("\n") |> hd()
   end
 
   def article_image_url(article) do
