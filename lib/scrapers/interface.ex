@@ -20,7 +20,7 @@ defmodule Scrapers.Interface do
 
       alias ElixirFormula.{Monitoring, Publications}
 
-      @interval 3_600
+      @interval 3_600_000
 
       # API
 

@@ -13,16 +13,15 @@ defmodule Scrapers.Supervisor do
   @impl true
   def init(_arg) do
     children = [
-      # CompaniesBlogs.AppSignal,
-      # CompaniesBlogs.CarbonFive
-      # CompaniesBlogs.Curiosum,
-      # CompaniesBlogs.Dashbit,
-      # CompaniesBlogs.Dockyard
-      CompaniesBlogs.ErlangSolutions
-
-      # PersonalBlogs.ElixirLang
-
-      # PublishingPlatforms.DevTo
+      CompaniesBlogs.AppSignal,
+      CompaniesBlogs.CarbonFive,
+      CompaniesBlogs.Curiosum,
+      CompaniesBlogs.Dashbit,
+      CompaniesBlogs.Dockyard,
+      CompaniesBlogs.ErlangSolutions,
+      CompaniesBlogs.Thoughtbot,
+      PersonalBlogs.ElixirLang,
+      PublishingPlatforms.DevTo
     ]
 
     Supervisor.init(children, strategy: :one_for_one)

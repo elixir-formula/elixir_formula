@@ -54,7 +54,7 @@ defmodule Scrapers.CompaniesBlogs.Dashbit do
   def article_tags(article) do
     article
     |> Floki.find("li.date > a.text-primary")
-    |> Floki.text(sep: " ")
-    |> String.split(" ")
+    |> Floki.text(sep: ",")
+    |> String.split(",")
   end
 end
