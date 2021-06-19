@@ -58,6 +58,7 @@ defmodule Scrapers.CompaniesBlogs.Dockyard do
     article
     |> Floki.find("li.blog-category-list__item")
     |> Floki.text()
+    |> String.downcase()
     |> String.split("\n")
     |> Enum.map(&String.trim/1)
     |> Enum.filter(&(byte_size(&1) != 0))
