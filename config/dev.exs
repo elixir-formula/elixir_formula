@@ -27,9 +27,15 @@ config :elixir_formula, ElixirFormulaWeb.Endpoint,
     ]
   ]
 
+# Configures Ueberauth
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: System.get_env("GITHUB_CLIENT_ID"),
   client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+
+# Configures Nadia
+config :nadia,
+  token: System.get_env("TELEGRAM_BOT_TOKEN"),
+  channel_id: System.get_env("TELEGRAM_CHANNEL_ID")
 
 # ## SSL Support
 #
