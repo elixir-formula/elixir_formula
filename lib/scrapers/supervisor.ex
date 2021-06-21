@@ -2,9 +2,9 @@ defmodule Scrapers.Supervisor do
   @moduledoc false
   use Supervisor
 
-  alias Scrapers.CompaniesBlogs
-  alias Scrapers.PersonalBlogs
-  alias Scrapers.PublishingPlatforms
+  # alias Scrapers.CompaniesBlogs
+  # alias Scrapers.PersonalBlogs
+  # alias Scrapers.PublishingPlatforms
 
   def start_link(arg) do
     Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
