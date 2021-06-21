@@ -3,7 +3,7 @@ defmodule ElixirFormula.Publications.Services.PublishPublication do
   alias ElixirFormula.Publications.Schemas.Publication
   alias ElixirFormula.Publications.Services.UpdatePublication
 
-  @telegram_channel_id "-1001317176834"
+  @telegram_channel_id "-1001270913271"
 
   @doc """
   Updates publication status to published and send message to the telegram channel.

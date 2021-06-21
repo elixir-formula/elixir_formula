@@ -22,7 +22,7 @@ defmodule Scrapers.CompaniesBlogs.Hashrocket do
       |> Floki.attribute("href")
       |> Floki.text()
 
-    "https://hashrocket.com/" <> url
+    "https://hashrocket.com" <> url
   end
 
   # single article processing

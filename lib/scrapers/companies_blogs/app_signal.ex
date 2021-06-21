@@ -22,7 +22,7 @@ defmodule Scrapers.CompaniesBlogs.AppSignal do
       |> Floki.attribute("href")
       |> Floki.text()
 
-    "https://blog.appsignal.com/" <> url
+    "https://blog.appsignal.com" <> url
   end
 
   # single article processing
