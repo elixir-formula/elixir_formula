@@ -34,8 +34,7 @@ config :ueberauth, Ueberauth.Strategy.Github.OAuth,
 
 # Configures Nadia
 config :nadia,
-  token: System.get_env("TELEGRAM_BOT_TOKEN"),
-  channel_id: System.get_env("TELEGRAM_CHANNEL_ID")
+  token: System.get_env("TELEGRAM_BOT_TOKEN")
 
 # ## SSL Support
 #
