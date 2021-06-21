@@ -5,16 +5,14 @@ Telegram channel for elixir developers and other people who interested in Elixir
 ## Scraping resources
   - [AppSignal](https://appsignal.com/)
   - [Carbon Five](https://www.carbonfive.com/)
-  - [Curiosum](https://curiosum.dev/)
+  - [Curiosum](https://curiosum.com/)
   - [Dashbit](https://dashbit.co/)
   - [DevTo](https://dev.to/)
   - [Dockyard](https://dockyard.com/)
   - [Elixir Lang](https://elixir-lang.org/)
   - [ErlangSolutions](https://www.erlang-solutions.com/)
-  - [Medium](http://medium.com/)
-  - [Plataformatec](https://plataformatec.com/en/)
+  - [HashRocket](https://hashrocket.com/)
   - [Robots Thoughtbot](https://robots.thoughtbot.com/)
-  - [Today I Learned](https://til.hashrocket.com/)
 
 ## Contributing
 
