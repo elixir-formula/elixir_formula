@@ -63,9 +63,6 @@ defmodule ElixirFormula.MixProject do
       # HTTP client
       {:finch, "~> 0.7"},
 
-      
-      {:timex, "~> 3.0"},
-
       # Web server
       {:plug_cowboy, "~> 2.0"},
 
