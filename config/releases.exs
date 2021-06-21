@@ -1,11 +1,6 @@
-# In this file, we load production configuration and secrets
-# from environment variables. You can also hardcode secrets,
-# although such is generally not recommended and you have to
-# remember to add this file to your .gitignore.
 import Config
 
-config :elixir_formula, ElixirFormula.Repo,
-  url: System.get_env("DATABASE_URL")
+config :elixir_formula, ElixirFormula.Repo, url: System.get_env("DATABASE_URL")
 
 config :elixir_formula, ElixirFormulaWeb.Endpoint,
   http: [:inet6, port: 4000],
