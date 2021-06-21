@@ -20,9 +20,21 @@ defmodule ElixirFormula.Publications.Schemas.Publication do
     timestamps(type: :utc_datetime)
   end
 
+  @fields [
+    :title,
+    :url,
+    :tags,
+    :author_name,
+    :source,
+    :status,
+    :description,
+    :image_url,
+    :inserted_at
+  ]
+
   def changeset(publication, attrs \\ %{}) do
     publication
-    |> cast(attrs, [:title, :url, :tags, :author_name, :source, :status, :description, :image_url])
+    |> cast(attrs, @fields)
     |> validate_required([:title, :url, :author_name, :source])
   end
 end
