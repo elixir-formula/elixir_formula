@@ -4,9 +4,10 @@
 # remember to add this file to your .gitignore.
 import Config
 
-config :birthday_reminder, ElixirFormula.Repo, url: System.get_env("DATABASE_URL")
+config :elixir_formula, ElixirFormula.Repo,
+  url: System.get_env("DATABASE_URL")
 
-config :birthday_reminder, ElixirFormulaWeb.Endpoint,
+config :elixir_formula, ElixirFormulaWeb.Endpoint,
   http: [:inet6, port: 4000],
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   url: [scheme: "https", host: System.get_env("APP_NAME") <> ".gigalixirapp.com", port: 443],
