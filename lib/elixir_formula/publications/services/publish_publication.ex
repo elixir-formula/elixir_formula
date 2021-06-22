@@ -3,8 +3,6 @@ defmodule ElixirFormula.Publications.Services.PublishPublication do
   alias ElixirFormula.Publications.Schemas.Publication
   alias ElixirFormula.Publications.Services.UpdatePublication
 
-  @telegram_channel_id "-1001270913271"
-
   @doc """
   Updates publication status to published and send message to the telegram channel.
 
@@ -17,7 +15,7 @@ defmodule ElixirFormula.Publications.Services.PublishPublication do
   def call(publication) do
     with {:ok, publication} <- UpdatePublication.call(publication, %{status: :published}),
          message <- build_message(publication) do
-      Nadia.send_message(@telegram_channel_id, message, parse_mode: "HTML")
+      Nadia.send_message(telegram_channel_id(), message, parse_mode: "HTML")
     end
   end
 
@@ -27,4 +25,6 @@ defmodule ElixirFormula.Publications.Services.PublishPublication do
     |> String.trim()
     |> Kernel.<>("\n\n<b>#{publication.title}</b>\n\n#{publication.url}")
   end
+
+  defp telegram_channel_id, do: Application.fetch_env!(:nadia, :channel_id)
 end

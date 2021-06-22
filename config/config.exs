@@ -29,6 +29,11 @@ config :ueberauth, Ueberauth,
     github: {Ueberauth.Strategy.Github, [default_scope: "user:email"]}
   ]
 
+# Configures Nadia
+config :nadia,
+  token: System.get_env("TELEGRAM_BOT_TOKEN"),
+  channel_id: System.get_env("TELEGRAM_CHANNEL_ID")
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 

@@ -28,7 +28,7 @@ defmodule ElixirFormula.Publications.Services.GetPublicationsList do
   def call(params) do
     Publication
     |> filter_by_status(params)
-    |> order_by(desc: :id)
+    |> order_by(desc: :updated_at)
     |> paginate(params)
   end
 
