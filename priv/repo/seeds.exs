@@ -78,6 +78,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "pentacent.com"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "thoughtbot.com"
   },
   on_conflict: :nothing
