@@ -3,16 +3,17 @@
 Telegram channel for elixir developers and other people who interested in Elixir-lang. The project is a scraper which parse different resources for further publication in the telegram channel.
 
 ## Scraping resources
-  - [AppSignal](https://appsignal.com/)
-  - [Carbon Five](https://www.carbonfive.com/)
-  - [Curiosum](https://curiosum.com/)
-  - [Dashbit](https://dashbit.co/)
-  - [DevTo](https://dev.to/)
-  - [Dockyard](https://dockyard.com/)
-  - [Elixir Lang](https://elixir-lang.org/)
-  - [ErlangSolutions](https://www.erlang-solutions.com/)
-  - [HashRocket](https://hashrocket.com/)
-  - [Robots Thoughtbot](https://robots.thoughtbot.com/)
+  - [AppSignal](https://blog.appsignal.com/category/elixir.html)
+  - [Carbon Five](https://blog.carbonfive.com/category/elixir/)
+  - [Curiosum](https://curiosum.com/blog/category/elixir)
+  - [Dashbit](https://dashbit.co/blog)
+  - [DevTo](https://dev.to/t/elixir/latest)
+  - [Dockyard](https://dockyard.com/blog/categories/elixir)
+  - [Elixir Lang](https://elixir-lang.org/blog/)
+  - [ErlangSolutions](https://www.erlang-solutions.com/blog/)
+  - [HashRocket](https://hashrocket.com/blog/tags/elixir)
+  - [PentaCent](https://pentacent.com/blog/)
+  - [Robots Thoughtbot](https://thoughtbot.com/blog/tags/elixir)
 
 ## Contributing
 
