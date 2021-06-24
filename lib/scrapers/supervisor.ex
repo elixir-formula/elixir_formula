@@ -23,6 +23,7 @@ defmodule Scrapers.Supervisor do
       CompaniesBlogs.Thoughtbot,
       PersonalBlogs.ElixirLang,
       PersonalBlogs.Pentacent,
+      PersonalBlogs.TodayILearned,
       PublishingPlatforms.DevTo
     ]
 

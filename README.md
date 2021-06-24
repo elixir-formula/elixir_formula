@@ -14,6 +14,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
   - [HashRocket](https://hashrocket.com/blog/tags/elixir)
   - [PentaCent](https://pentacent.com/blog/)
   - [Robots Thoughtbot](https://thoughtbot.com/blog/tags/elixir)
+  - [Today I Learned](https://til.hashrocket.com/elixir)
 
 ## Contributing
 

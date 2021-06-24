@@ -85,6 +85,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "til.hashrocket.com"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "thoughtbot.com"
   },
   on_conflict: :nothing
