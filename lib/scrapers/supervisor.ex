@@ -30,6 +30,7 @@ defmodule Scrapers.Supervisor do
       PersonalBlogs.Pentacent,
       PersonalBlogs.Seanmoriarity,
       PersonalBlogs.Sorentwo,
+      PersonalBlogs.TheGreatCodeAdventure,
       PersonalBlogs.TodayILearned,
       Podcasts.ElixirWizards,
       PublishingPlatforms.DevTo
