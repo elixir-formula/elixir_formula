@@ -1,19 +1,19 @@
-defmodule Scrapers.PersonalBlogs.Bigargone do
+defmodule Scrapers.CompaniesBlogs.Fly do
   @moduledoc """
-  Bigargone.dev scrapper implementation.
+  Fly.io scrapper implementation.
   """
   use Scrapers.Interface
 
   # articles processing
 
   def resource,
-    do: "https://bigardone.dev/blog"
+    do: "https://fly.io/blog/"
 
   def article_source,
-    do: "bigardone.dev"
+    do: "fly.io"
 
   def articles_selector,
-    do: "article.post-card"
+    do: "article.items-start"
 
   def article_url(article) do
     url =
@@ -22,40 +22,40 @@ defmodule Scrapers.PersonalBlogs.Bigargone do
       |> Floki.attribute("href")
       |> Floki.text()
 
-    "https://bigardone.dev" <> url
+    "https://fly.io" <> url
   end
 
   # single article processing
 
   def article_author(article) do
-    "bigardone"
+    article
+    |> Floki.find("dl.text-sm > dd.text-navy")
+    |> Floki.text()
+    |> String.trim()
   end
 
   def article_image_url(article) do
     article
-    |> Floki.find("meta[property='og:image']")
+    |> Floki.find("meta[name='twitter:image']")
     |> Floki.attribute("content")
     |> Floki.text()
   end
 
   def article_description(article) do
     article
-    |> Floki.find("meta[property='og:description']")
-    |> Floki.attribute("content")
+    |> Floki.find("div.lead")
     |> Floki.text()
+    |> String.trim()
   end
 
   def article_title(article) do
     article
-    |> Floki.find("meta[property='og:title']")
+    |> Floki.find("meta[name='twitter:title']")
     |> Floki.attribute("content")
     |> Floki.text()
   end
 
-  def article_tags(article) do
-    article
-    |> Floki.find("div.p-2.mb-2.mr-2.bg-gray-100.rounded-md")
-    |> Floki.text(sep: ",")
-    |> String.split(",")
+  def article_tags(_article) do
+    ["elixir"]
   end
 end

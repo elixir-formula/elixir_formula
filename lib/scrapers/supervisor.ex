@@ -19,6 +19,7 @@ defmodule Scrapers.Supervisor do
       CompaniesBlogs.Dashbit,
       CompaniesBlogs.Dockyard,
       CompaniesBlogs.ErlangSolutions,
+      CompaniesBlogs.Fly,
       CompaniesBlogs.Hashrocket,
       CompaniesBlogs.Thoughtbot,
       PersonalBlogs.Bigargone,
