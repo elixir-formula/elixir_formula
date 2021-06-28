@@ -4,6 +4,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
 
 ## Scraping resources
   - [AppSignal](https://blog.appsignal.com/category/elixir.html)
+  - [Bigargone](https://bigardone.dev/blog)
   - [Carbon Five](https://blog.carbonfive.com/category/elixir/)
   - [Curiosum](https://curiosum.com/blog/category/elixir)
   - [Dashbit](https://dashbit.co/blog)

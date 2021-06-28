@@ -21,6 +21,7 @@ defmodule Scrapers.Supervisor do
       CompaniesBlogs.ErlangSolutions,
       CompaniesBlogs.Hashrocket,
       CompaniesBlogs.Thoughtbot,
+      PersonalBlogs.Bigargone,
       PersonalBlogs.ElixirLang,
       PersonalBlogs.Pentacent,
       PersonalBlogs.TodayILearned,
