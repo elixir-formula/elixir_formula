@@ -1,34 +1,31 @@
-defmodule Scrapers.PersonalBlogs.Bigargone do
+defmodule Scrapers.PersonalBlogs.Seanmoriarity do
   @moduledoc """
-  Bigargone.dev scrapper implementation.
+  Seanmoriarity.org scrapper implementation.
   """
   use Scrapers.Interface
 
   # articles processing
 
   def resource,
-    do: "https://bigardone.dev/blog"
+    do: "https://seanmoriarity.com/"
 
   def article_source,
-    do: "bigardone.dev"
+    do: "seanmoriarity.com"
 
   def articles_selector,
-    do: "article.post-card"
+    do: "article.post"
 
   def article_url(article) do
-    url =
-      article
-      |> Floki.find("a")
-      |> Floki.attribute("href")
-      |> Floki.text()
-
-    "https://bigardone.dev" <> url
+    article
+    |> Floki.find("h1.entry-title > a")
+    |> Floki.attribute("href")
+    |> Floki.text()
   end
 
   # single article processing
 
   def article_author(_article) do
-    "bigardone"
+    "Sean Moriarity"
   end
 
   def article_image_url(article) do
@@ -52,10 +49,7 @@ defmodule Scrapers.PersonalBlogs.Bigargone do
     |> Floki.text()
   end
 
-  def article_tags(article) do
-    article
-    |> Floki.find("div.p-2.mb-2.mr-2.bg-gray-100.rounded-md")
-    |> Floki.text(sep: ",")
-    |> String.split(",")
+  def article_tags(_article) do
+    ["elixir", "ai"]
   end
 end

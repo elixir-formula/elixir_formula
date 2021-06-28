@@ -25,6 +25,7 @@ defmodule Scrapers.Supervisor do
       PersonalBlogs.Bigargone,
       PersonalBlogs.ElixirLang,
       PersonalBlogs.Pentacent,
+      PersonalBlogs.Seanmoriarity,
       PersonalBlogs.TodayILearned,
       PublishingPlatforms.DevTo
     ]
