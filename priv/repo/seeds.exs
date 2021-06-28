@@ -78,6 +78,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "elixir_mix"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "elixir_wizards"
   },
   on_conflict: :nothing
