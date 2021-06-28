@@ -16,6 +16,7 @@ defmodule Scrapers.Supervisor do
     children = [
       CompaniesBlogs.AppSignal,
       CompaniesBlogs.CarbonFive,
+      CompaniesBlogs.Coletiv,
       CompaniesBlogs.Curiosum,
       CompaniesBlogs.Dashbit,
       CompaniesBlogs.Dockyard,

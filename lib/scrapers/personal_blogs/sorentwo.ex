@@ -44,8 +44,11 @@ defmodule Scrapers.PersonalBlogs.Sorentwo do
       |> Floki.text()
 
     case image_url do
-      "" -> "https://d32myzxfxyl12w.cloudfront.net/images/blog_images/1145e4a9d0a56c29e4eb3ffbdbaa0362299e8e8f.png?1540465745"
-      image_url -> "https://sorentwo.com" <> image_url
+      "" ->
+        "https://d32myzxfxyl12w.cloudfront.net/images/blog_images/1145e4a9d0a56c29e4eb3ffbdbaa0362299e8e8f.png?1540465745"
+
+      image_url ->
+        "https://sorentwo.com" <> image_url
     end
   end
 
