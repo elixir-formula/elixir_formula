@@ -1,6 +1,6 @@
 defmodule Scrapers.PersonalBlogs.TodayILearned do
   @moduledoc """
-  Pentacent.org scrapper implementation.
+  Til.hashrocket.com scrapper implementation.
   """
   use Scrapers.Interface
 

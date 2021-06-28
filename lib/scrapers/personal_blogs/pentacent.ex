@@ -1,6 +1,6 @@
 defmodule Scrapers.PersonalBlogs.Pentacent do
   @moduledoc """
-  Pentacent.org scrapper implementation.
+  Pentacent.com scrapper implementation.
   """
   use Scrapers.Interface
 
