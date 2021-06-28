@@ -28,6 +28,7 @@ defmodule Scrapers.Supervisor do
       PersonalBlogs.Changelog,
       PersonalBlogs.ElixirLang,
       PersonalBlogs.Pentacent,
+      PersonalBlogs.PhoenixFramework,
       PersonalBlogs.Seanmoriarity,
       PersonalBlogs.Sorentwo,
       PersonalBlogs.TheGreatCodeAdventure,

@@ -120,6 +120,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "phoenixframework.org"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "seanmoriarity.com"
   },
   on_conflict: :nothing
