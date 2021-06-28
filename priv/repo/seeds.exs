@@ -36,6 +36,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "changelog.com"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "curiosum.com"
   },
   on_conflict: :nothing
