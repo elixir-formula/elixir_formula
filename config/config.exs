@@ -60,7 +60,7 @@ config :elixir_formula, Scrapers.Scheduler,
     {"21 * * * *", {Scrapers.Podcasts.ElixirMix, :run, []}},
     {"22 * * * *", {Scrapers.Podcasts.ElixirWizards, :run, []}},
     {"23 * * * *", {Scrapers.Podcasts.ThinkingElixir, :run, []}},
-    {"24 * * * *", {Scrapers.PublishingPlatforms.DevTo, :run, []}},
+    {"24 * * * *", {Scrapers.PublishingPlatforms.DevTo, :run, []}}
   ]
 
 # Use Jason for JSON parsing in Phoenix
