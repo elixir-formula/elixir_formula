@@ -17,8 +17,8 @@ defmodule ElixirFormula.Application do
       {Phoenix.PubSub, name: ElixirFormula.PubSub},
       # Start the Endpoint (http/https)
       ElixirFormulaWeb.Endpoint,
-      # Start the Scrapers supervisor
-      Scrapers.Supervisor,
+      # Start the Scrapers scheduler
+      Scrapers.Scheduler,
       # Start Finch
       {Finch,
        name: ElixirFormula.Finch,

@@ -16,38 +16,18 @@ defmodule Scrapers.Interface do
     quote do
       @behaviour Scrapers.Interface
 
-      use GenServer
-
       alias ElixirFormula.{Monitoring, Publications}
 
-      @interval 3_600_000
+      # Processing
 
-      # API
-
-      def start_link(arg) do
-        GenServer.start_link(__MODULE__, %{interval: @interval}, name: __MODULE__)
-      end
-
-      # Callbacks
-
-      def init(%{interval: interval} = state) do
-        :erlang.send_after(interval, self(), :process_resource)
-        {:ok, state}
-      end
-
-      def handle_info(:process_resource, %{interval: interval} = state) do
+      def run do
         resource()
         |> create_request()
         |> parse_html()
         |> get_articles()
         |> update_status()
         |> Enum.each(&process_article/1)
-
-        :erlang.send_after(interval, self(), :process_resource)
-        {:noreply, state}
       end
-
-      # Processing
 
       def create_request(resource),
         do: Finch.build(:get, resource) |> Finch.request(ElixirFormula.Finch)

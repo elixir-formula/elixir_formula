@@ -34,6 +34,35 @@ config :nadia,
   token: System.get_env("TELEGRAM_BOT_TOKEN"),
   channel_id: System.get_env("TELEGRAM_CHANNEL_ID")
 
+# Configures Quantum
+config :elixir_formula, Scrapers.Scheduler,
+  jobs: [
+    {"1 * * * *", {Scrapers.CompaniesBlogs.AppSignal, :run, []}},
+    {"2 * * * *", {Scrapers.CompaniesBlogs.CarbonFive, :run, []}},
+    {"3 * * * *", {Scrapers.CompaniesBlogs.Coletiv, :run, []}},
+    {"4 * * * *", {Scrapers.CompaniesBlogs.Curiosum, :run, []}},
+    {"5 * * * *", {Scrapers.CompaniesBlogs.Dashbit, :run, []}},
+    {"6 * * * *", {Scrapers.CompaniesBlogs.Dockyard, :run, []}},
+    {"7 * * * *", {Scrapers.CompaniesBlogs.ErlangSolutions, :run, []}},
+    {"8 * * * *", {Scrapers.CompaniesBlogs.Fly, :run, []}},
+    {"9 * * * *", {Scrapers.CompaniesBlogs.Hashrocket, :run, []}},
+    {"10 * * * *", {Scrapers.CompaniesBlogs.Smartlogic, :run, []}},
+    {"11 * * * *", {Scrapers.CompaniesBlogs.Thoughtbot, :run, []}},
+    {"12 * * * *", {Scrapers.PersonalBlogs.Bigargone, :run, []}},
+    {"13 * * * *", {Scrapers.PersonalBlogs.Changelog, :run, []}},
+    {"14 * * * *", {Scrapers.PersonalBlogs.ElixirLang, :run, []}},
+    {"15 * * * *", {Scrapers.PersonalBlogs.Pentacent, :run, []}},
+    {"16 * * * *", {Scrapers.PersonalBlogs.PhoenixFramework, :run, []}},
+    {"17 * * * *", {Scrapers.PersonalBlogs.Seanmoriarity, :run, []}},
+    {"18 * * * *", {Scrapers.PersonalBlogs.Sorentwo, :run, []}},
+    {"19 * * * *", {Scrapers.PersonalBlogs.TheGreatCodeAdventure, :run, []}},
+    {"20 * * * *", {Scrapers.PersonalBlogs.TodayILearned, :run, []}},
+    {"21 * * * *", {Scrapers.Podcasts.ElixirMix, :run, []}},
+    {"22 * * * *", {Scrapers.Podcasts.ElixirWizards, :run, []}},
+    {"23 * * * *", {Scrapers.Podcasts.ThinkingElixir, :run, []}},
+    {"24 * * * *", {Scrapers.PublishingPlatforms.DevTo, :run, []}},
+  ]
+
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 

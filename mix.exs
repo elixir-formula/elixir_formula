@@ -72,6 +72,9 @@ defmodule ElixirFormula.MixProject do
       # Pagination library
       {:scrivener_ecto, "~> 2.0"},
 
+      # Cron-like job scheduler
+      {:quantum, "~> 3.0"},
+
       # Telegram bot API wrapper
       {:nadia, "~> 0.7.0"},
 
