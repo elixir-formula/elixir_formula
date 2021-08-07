@@ -1,6 +1,8 @@
 import Config
 
-config :elixir_formula, ElixirFormula.Repo, url: System.get_env("DATABASE_URL")
+config :elixir_formula, ElixirFormula.Repo,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: 2
 
 config :elixir_formula, ElixirFormulaWeb.Endpoint,
   http: [:inet6, port: 4000],
