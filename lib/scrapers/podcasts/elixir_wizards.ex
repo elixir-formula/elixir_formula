@@ -13,7 +13,7 @@ defmodule Scrapers.Podcasts.ElixirWizards do
     do: "elixir_wizards"
 
   def articles_selector,
-    do: "article.casestudies-horizontal__article"
+    do: "article.podcast-horizontal__article"
 
   def article_url(article) do
     url =
