@@ -130,4 +130,6 @@ jobs:
       - name: Run Tests
         run: |
           mix ecto.setup
-          mix coveralls
+          mix coveralls.github
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
