@@ -1,37 +1,33 @@
-defmodule Scrapers.CompaniesBlogs.AppSignal do
+defmodule Scrapers.CompaniesBlogs.AppUnit do
   @moduledoc """
-  AppSignal.com scrapper implementation.
+  AppUnit.com scrapper implementation.
   """
   use Scrapers.Interface
 
   # articles processing
 
   def resource,
-    do: "https://blog.appsignal.com/category/elixir.html"
+    do: "https://appunite.com/blog/tag/elixir"
 
   def article_source,
-    do: "appsignal.com"
+    do: "appunite.com"
 
   def articles_selector,
-    do: "article.mod-preview"
+    do: "a.PostCard_post__P_m3b"
 
   def article_url(article) do
     url =
       article
-      |> Floki.find("a.opacity_6")
       |> Floki.attribute("href")
       |> Floki.text()
 
-    "https://blog.appsignal.com" <> url
+    "https://appunite.com" <> url
   end
 
   # single article processing
 
   def article_author(article) do
-    article
-    |> Floki.find("p.Author_authorName__3Pira")
-    |> hd()
-    |> Floki.text()
+    article |> Floki.find("p.meta") |> Floki.text() |> String.trim() |> String.split("\n") |> hd()
   end
 
   def article_image_url(article) do
@@ -55,7 +51,11 @@ defmodule Scrapers.CompaniesBlogs.AppSignal do
     |> Floki.text()
   end
 
-  def article_tags(_article) do
-    ["elixir"]
+  def article_tags(article) do
+    article
+    |> Floki.find("div.PostBottomTags_tag__2eVh3 > a")
+    |> Floki.text(sep: ",")
+    |> String.downcase()
+    |> String.split(",")
   end
 end

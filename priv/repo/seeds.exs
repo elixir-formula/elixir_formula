@@ -22,6 +22,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "appunit.com"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "bigardone.dev"
   },
   on_conflict: :nothing
