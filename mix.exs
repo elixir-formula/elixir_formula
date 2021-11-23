@@ -5,9 +5,9 @@ defmodule ElixirFormula.MixProject do
     [
       app: :elixir_formula,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.11.0",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
@@ -39,17 +39,17 @@ defmodule ElixirFormula.MixProject do
   defp deps do
     [
       # phoenix
-      {:phoenix, "~> 1.5.7"},
-      {:phoenix_ecto, "~> 4.1"},
-      {:ecto_sql, "~> 3.4"},
-      {:phoenix_live_view, "~> 0.15.0"},
-      {:phoenix_html, "~> 2.11"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:phoenix, "~> 1.6.2"},
+      {:phoenix_ecto, "~> 4.4.0"},
+      {:ecto_sql, "~> 3.7.1"},
+      {:phoenix_live_view, "~> 0.17.5"},
+      {:phoenix_html, "~> 3.1.0"},
+      {:phoenix_live_reload, "~> 1.3.3", only: :dev},
 
       # Dashboard and telemetry
-      {:phoenix_live_dashboard, "~> 0.4"},
-      {:telemetry_metrics, "~> 0.4"},
-      {:telemetry_poller, "~> 0.4"},
+      {:phoenix_live_dashboard, "~> 0.6.1"},
+      {:telemetry_metrics, "~> 0.6.1"},
+      {:telemetry_poller, "~> 1.0.0"},
 
       # Internationalization and localization
       {:gettext, "~> 0.11"},
@@ -58,37 +58,37 @@ defmodule ElixirFormula.MixProject do
       {:jason, "~> 1.0"},
 
       # HTML parser
-      {:floki, "~> 0.30.0"},
+      {:floki, "~> 0.32.0"},
 
       # HTTP client
-      {:finch, "~> 0.7"},
+      {:finch, "~> 0.9.1"},
 
       # Web server
-      {:plug_cowboy, "~> 2.0"},
+      {:plug_cowboy, "~> 2.5.2"},
 
       # Database adapter
-      {:postgrex, ">= 0.0.0"},
+      {:postgrex, "~> 0.15.13"},
 
       # Pagination library
       {:scrivener_ecto, "~> 2.0"},
 
       # Cron-like job scheduler
-      {:quantum, "~> 3.0"},
+      {:quantum, "~> 3.4.0"},
 
       # Telegram bot API wrapper
       {:nadia, "~> 0.7.0"},
 
       # Github auth
-      {:ueberauth, "~> 0.6"},
-      {:ueberauth_github, "~> 0.7"},
+      {:ueberauth, "~> 0.7.0"},
+      {:ueberauth_github, "~> 0.8.1"},
 
       # Testing tools
       {:ex_machina, "~> 2.7.0", only: :test},
-      {:excoveralls, "~> 0.14.0", only: :test},
+      {:excoveralls, "~> 0.14.4", only: :test},
       {:mock, "~> 0.3.7", only: :test},
 
       # Static code analysis
-      {:credo, "~> 1.5", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.6.1", only: [:dev, :test], runtime: false}
     ]
   end
 
