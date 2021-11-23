@@ -30,9 +30,7 @@ defmodule ElixirFormulaWeb.PublicationsLive.Index do
   # Helpers
 
   defp publication_tags(%Publication{tags: tags}) do
-    tags
-    |> Enum.map(&"##{&1}")
-    |> Enum.join(" ")
+    Enum.map_join(tags, " ", &"##{&1}")
   end
 
   defp published_at(%Publication{inserted_at: inserted_at}) do
