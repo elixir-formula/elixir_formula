@@ -1,6 +1,6 @@
-defmodule Scrapers.CompaniesBlogs.AppUnit do
+defmodule Scrapers.CompaniesBlogs.AppUnite do
   @moduledoc """
-  AppUnit.com scrapper implementation.
+  AppUnite.com scrapper implementation.
   """
   use Scrapers.Interface
 

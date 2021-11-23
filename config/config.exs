@@ -38,7 +38,7 @@ config :nadia,
 config :elixir_formula, Scrapers.Scheduler,
   jobs: [
     {"1 * * * *", {Scrapers.CompaniesBlogs.AppSignal, :run, []}},
-    {"2 * * * *", {Scrapers.CompaniesBlogs.AppUnit, :run, []}},
+    {"2 * * * *", {Scrapers.CompaniesBlogs.AppUnite, :run, []}},
     {"3 * * * *", {Scrapers.CompaniesBlogs.CarbonFive, :run, []}},
     {"4 * * * *", {Scrapers.CompaniesBlogs.Coletiv, :run, []}},
     {"5 * * * *", {Scrapers.CompaniesBlogs.Curiosum, :run, []}},

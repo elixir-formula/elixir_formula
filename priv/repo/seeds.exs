@@ -22,7 +22,7 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
-    source: "appunit.com"
+    source: "appunite.com"
   },
   on_conflict: :nothing
 )
