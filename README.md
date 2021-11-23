@@ -1,5 +1,6 @@
 # Elixir Formula
 
+![CI Status](https://github.com/elixir-formula/elixir_formula/actions/workflows/ci.yml/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/elixir-formula/elixir_formula/badge.svg?branch=master)](https://coveralls.io/github/elixir-formula/elixir_formula?branch=master)
 
 Telegram channel for elixir developers and other people who interested in Elixir-lang. The project is a scraper which parse different resources for further publication in the telegram channel.
