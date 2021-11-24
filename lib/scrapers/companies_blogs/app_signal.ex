@@ -29,9 +29,11 @@ defmodule Scrapers.CompaniesBlogs.AppSignal do
 
   def article_author(article) do
     article
-    |> Floki.find("p.Author_authorName__3Pira")
-    |> hd()
+    |> Floki.find("p.meta")
     |> Floki.text()
+    |> String.trim()
+    |> String.split("\n")
+    |> hd()
   end
 
   def article_image_url(article) do

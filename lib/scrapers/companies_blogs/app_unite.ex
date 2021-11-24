@@ -27,7 +27,10 @@ defmodule Scrapers.CompaniesBlogs.AppUnite do
   # single article processing
 
   def article_author(article) do
-    article |> Floki.find("p.meta") |> Floki.text() |> String.trim() |> String.split("\n") |> hd()
+    article
+    |> Floki.find("p.Author_authorName__3Pira")
+    |> hd()
+    |> Floki.text()
   end
 
   def article_image_url(article) do
