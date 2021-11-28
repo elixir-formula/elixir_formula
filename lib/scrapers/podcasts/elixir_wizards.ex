@@ -1,6 +1,6 @@
 defmodule Scrapers.Podcasts.ElixirWizards do
   @moduledoc """
-  Smartlogic.io podcasts scrapper implementation.
+  Smartlogic.io podcasts scraper implementation.
   """
   use Scrapers.Interface
 

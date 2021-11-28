@@ -26,6 +26,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
   - [Phoenix Framework](https://www.phoenixframework.org/blog)
   - [Robots Thoughtbot](https://thoughtbot.com/blog/tags/elixir)
   - [Sean Moriarity blog](https://seanmoriarity.com/)
+  - [Serokell](https://serokell.io/blog/elixir)
   - [Smartlogic](https://smartlogic.io/blog/tag/elixir/)
   - [Sophie DeBenedetto blog](https://www.thegreatcodeadventure.com/)
   - [Sorentwo](https://sorentwo.com/blog/)

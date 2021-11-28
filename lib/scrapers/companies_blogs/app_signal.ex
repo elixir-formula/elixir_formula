@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.AppSignal do
   @moduledoc """
-  AppSignal.com scrapper implementation.
+  AppSignal.com scraper implementation.
   """
   use Scrapers.Interface
 

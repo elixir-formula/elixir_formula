@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.Curiosum do
   @moduledoc """
-  Curiosum.com scrapper implementation.
+  Curiosum.com scraper implementation.
   """
   use Scrapers.Interface
 

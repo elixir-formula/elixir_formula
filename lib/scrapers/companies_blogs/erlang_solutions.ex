@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.ErlangSolutions do
   @moduledoc """
-  Erlang-solutions.com scrapper implementation.
+  Erlang-solutions.com scraper implementation.
   """
   use Scrapers.Interface
 

@@ -148,6 +148,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "serokell.io"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "smartlogic.io"
   },
   on_conflict: :nothing

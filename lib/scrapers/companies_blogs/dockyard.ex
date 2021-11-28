@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.Dockyard do
   @moduledoc """
-  Dockyard.com scrapper implementation.
+  Dockyard.com scraper implementation.
   """
   use Scrapers.Interface
 

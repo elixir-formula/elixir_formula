@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.Smartlogic do
   @moduledoc """
-  Smartlogic.io scrapper implementation.
+  Smartlogic.io scraper implementation.
   """
   use Scrapers.Interface
 

@@ -1,6 +1,6 @@
 defmodule Scrapers.PublishingPlatforms.DevTo do
   @moduledoc """
-  Dev.to scrapper implementation.
+  Dev.to scraper implementation.
   """
   use Scrapers.Interface
 

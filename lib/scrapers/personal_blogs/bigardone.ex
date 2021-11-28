@@ -1,6 +1,6 @@
 defmodule Scrapers.PersonalBlogs.Bigargone do
   @moduledoc """
-  Bigargone.dev scrapper implementation.
+  Bigargone.dev scraper implementation.
   """
   use Scrapers.Interface
 

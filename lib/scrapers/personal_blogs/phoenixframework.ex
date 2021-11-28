@@ -1,6 +1,6 @@
 defmodule Scrapers.PersonalBlogs.PhoenixFramework do
   @moduledoc """
-  Phoenixframework.org scrapper implementation.
+  Phoenixframework.org scraper implementation.
   """
   use Scrapers.Interface
 

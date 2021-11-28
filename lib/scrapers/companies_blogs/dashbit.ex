@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.Dashbit do
   @moduledoc """
-  Dashbit.co scrapper implementation.
+  Dashbit.co scraper implementation.
   """
   use Scrapers.Interface
 

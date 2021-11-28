@@ -1,31 +1,36 @@
-defmodule Scrapers.Podcasts.ThinkingElixir do
+defmodule Scrapers.CompaniesBlogs.Serokell do
   @moduledoc """
-  Thinkingelixir.com podcasts scraper implementation.
+  Serokell.io scraper implementation.
   """
   use Scrapers.Interface
 
   # articles processing
 
   def resource,
-    do: "https://thinkingelixir.com/the-podcast/"
+    do: "https://serokell.io/blog/elixir"
 
   def article_source,
-    do: "thinkingelixir.com"
+    do: "serokell.io"
 
   def articles_selector,
-    do: "div.fl-post-grid-post"
+    do: "div.blog__post"
 
   def article_url(article) do
-    article
-    |> Floki.find("h2.fl-post-grid-title > a")
-    |> Floki.attribute("href")
-    |> Floki.text()
+    url =
+      article
+      |> Floki.find("a.blog__post-title")
+      |> Floki.attribute("href")
+      |> Floki.text()
+
+    "https://serokell.io" <> url
   end
 
   # single article processing
 
-  def article_author(_article) do
-    "Mark Ericksen"
+  def article_author(article) do
+    article
+    |> Floki.find("div.blog__authors-names > a")
+    |> Floki.text()
   end
 
   def article_image_url(article) do
@@ -49,7 +54,10 @@ defmodule Scrapers.Podcasts.ThinkingElixir do
     |> Floki.text()
   end
 
-  def article_tags(_article) do
-    ["elixir", "podcast", "thinkingelixir"]
+  def article_tags(article) do
+    article
+    |> Floki.find("div.blog-post__footer-tags > a")
+    |> Floki.text(sep: ",")
+    |> String.split(",")
   end
 end

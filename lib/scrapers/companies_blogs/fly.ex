@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.Fly do
   @moduledoc """
-  Fly.io scrapper implementation.
+  Fly.io scraper implementation.
   """
   use Scrapers.Interface
 

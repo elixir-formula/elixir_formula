@@ -1,6 +1,6 @@
 defmodule Scrapers.PersonalBlogs.Changelog do
   @moduledoc """
-  Changelog.com scrapper implementation.
+  Changelog.com scraper implementation.
   """
   use Scrapers.Interface
 

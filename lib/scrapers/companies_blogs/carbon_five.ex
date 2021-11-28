@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.CarbonFive do
   @moduledoc """
-  CarbonFive.com scrapper implementation.
+  CarbonFive.com scraper implementation.
   """
   use Scrapers.Interface
 

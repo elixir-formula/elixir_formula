@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.Hashrocket do
   @moduledoc """
-  Hashrocket.com scrapper implementation.
+  Hashrocket.com scraper implementation.
   """
   use Scrapers.Interface
 

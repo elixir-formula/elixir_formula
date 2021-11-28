@@ -1,6 +1,6 @@
 defmodule Scrapers.PersonalBlogs.TheGreatCodeAdventure do
   @moduledoc """
-  The Great Code Adventure scrapper implementation.
+  The Great Code Adventure scraper implementation.
   """
   use Scrapers.Interface
 

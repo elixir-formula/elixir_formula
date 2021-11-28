@@ -1,6 +1,6 @@
 defmodule Scrapers.PersonalBlogs.Seanmoriarity do
   @moduledoc """
-  Seanmoriarity.com scrapper implementation.
+  Seanmoriarity.com scraper implementation.
   """
   use Scrapers.Interface
 

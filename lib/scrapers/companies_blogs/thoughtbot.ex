@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.Thoughtbot do
   @moduledoc """
-  Thoughtbot.com scrapper implementation.
+  Thoughtbot.com scraper implementation.
   """
   use Scrapers.Interface
 

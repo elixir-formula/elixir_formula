@@ -1,6 +1,6 @@
 defmodule Scrapers.PersonalBlogs.ElixirLang do
   @moduledoc """
-  elixir-lang.org scrapper implementation.
+  elixir-lang.org scraper implementation.
   """
   use Scrapers.Interface
 

@@ -1,6 +1,6 @@
 defmodule Scrapers.Podcasts.ElixirMix do
   @moduledoc """
-  ElixirMix podcasts scrapper implementation.
+  ElixirMix podcasts scraper implementation.
   """
   use Scrapers.Interface
 

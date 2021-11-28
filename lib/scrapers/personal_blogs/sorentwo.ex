@@ -1,6 +1,6 @@
 defmodule Scrapers.PersonalBlogs.Sorentwo do
   @moduledoc """
-  Sorentwo.com scrapper implementation.
+  Sorentwo.com scraper implementation.
   """
   use Scrapers.Interface
 

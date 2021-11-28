@@ -1,6 +1,6 @@
 defmodule Scrapers.CompaniesBlogs.Coletiv do
   @moduledoc """
-  Coletiv.com scrapper implementation.
+  Coletiv.com scraper implementation.
   """
   use Scrapers.Interface
 
