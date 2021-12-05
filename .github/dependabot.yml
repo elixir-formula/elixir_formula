@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: mix
+  directory: /
+  schedule:
+    interval: weekly
+    day: tuesday
+    time: "08:00"
+  pull-request-branch-name:
+    separator: "-"
+  open-pull-requests-limit: 5
+  target-branch: master
+  reviewers:
+    - drEnilight
