@@ -57,12 +57,13 @@ config :elixir_formula, Scrapers.Scheduler,
     {"18 * * * *", {Scrapers.PersonalBlogs.PhoenixFramework, :run, []}},
     {"19 * * * *", {Scrapers.PersonalBlogs.Seanmoriarity, :run, []}},
     {"20 * * * *", {Scrapers.PersonalBlogs.Sorentwo, :run, []}},
-    {"21 * * * *", {Scrapers.PersonalBlogs.TheGreatCodeAdventure, :run, []}},
-    {"22 * * * *", {Scrapers.PersonalBlogs.TodayILearned, :run, []}},
-    {"23 * * * *", {Scrapers.Podcasts.ElixirMix, :run, []}},
-    {"24 * * * *", {Scrapers.Podcasts.ElixirWizards, :run, []}},
-    {"25 * * * *", {Scrapers.Podcasts.ThinkingElixir, :run, []}},
-    {"26 * * * *", {Scrapers.PublishingPlatforms.DevTo, :run, []}}
+    {"21 * * * *", {Scrapers.PersonalBlogs.Staknine, :run, []}},
+    {"22 * * * *", {Scrapers.PersonalBlogs.TheGreatCodeAdventure, :run, []}},
+    {"23 * * * *", {Scrapers.PersonalBlogs.TodayILearned, :run, []}},
+    {"24 * * * *", {Scrapers.Podcasts.ElixirMix, :run, []}},
+    {"25 * * * *", {Scrapers.Podcasts.ElixirWizards, :run, []}},
+    {"26 * * * *", {Scrapers.Podcasts.ThinkingElixir, :run, []}},
+    {"27 * * * *", {Scrapers.PublishingPlatforms.DevTo, :run, []}}
   ]
 
 # Use Jason for JSON parsing in Phoenix
