@@ -13,12 +13,11 @@ defmodule Scrapers.CompaniesBlogs.AppSignal do
     do: "appsignal.com"
 
   def articles_selector,
-    do: "article.mod-preview"
+    do: "a.no-underline.bg-white.rounded-lg"
 
   def article_url(article) do
     url =
       article
-      |> Floki.find("a.opacity_6")
       |> Floki.attribute("href")
       |> Floki.text()
 
@@ -29,11 +28,8 @@ defmodule Scrapers.CompaniesBlogs.AppSignal do
 
   def article_author(article) do
     article
-    |> Floki.find("p.meta")
+    |> Floki.find("p.text-purple-200 > a")
     |> Floki.text()
-    |> String.trim()
-    |> String.split("\n")
-    |> hd()
   end
 
   def article_image_url(article) do
