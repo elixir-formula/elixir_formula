@@ -7,19 +7,22 @@ defmodule Scrapers.Podcasts.ThinkingElixir do
   # articles processing
 
   def resource,
-    do: "https://thinkingelixir.com/the-podcast/"
+    do: "http://podcast.thinkingelixir.com/"
 
   def article_source,
     do: "thinkingelixir.com"
 
   def articles_selector,
-    do: "div.fl-post-grid-post"
+    do: "ul.list.cover > li"
 
   def article_url(article) do
-    article
-    |> Floki.find("h2.fl-post-grid-title > a")
-    |> Floki.attribute("href")
-    |> Floki.text()
+    url =
+      article
+      |> Floki.find("li > a")
+      |> Floki.attribute("href")
+      |> Floki.text()
+
+    "http://podcast.thinkingelixir.com" <> url
   end
 
   # single article processing

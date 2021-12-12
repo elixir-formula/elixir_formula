@@ -24,7 +24,7 @@ defmodule Scrapers.PersonalBlogs.Staknine do
 
   # single article processing
 
-  def article_author(article) do
+  def article_author(_article) do
     "StakNine"
   end
 
