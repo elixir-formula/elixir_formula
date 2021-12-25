@@ -7,7 +7,7 @@ defmodule Scrapers.Podcasts.ThinkingElixir do
   # articles processing
 
   def resource,
-    do: "http://podcast.thinkingelixir.com/"
+    do: "https://podcast.thinkingelixir.com/"
 
   def article_source,
     do: "thinkingelixir.com"

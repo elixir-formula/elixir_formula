@@ -30,7 +30,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
   - [Smartlogic](https://smartlogic.io/blog/tag/elixir/)
   - [Sophie DeBenedetto blog](https://www.thegreatcodeadventure.com/)
   - [Sorentwo](https://sorentwo.com/blog/)
-  - [Thinking Elixir podcast](https://thinkingelixir.com/the-podcast/)
+  - [Thinking Elixir podcast](https://podcast.thinkingelixir.com/)
   - [Today I Learned](https://til.hashrocket.com/elixir)
 
 ## Contributing
