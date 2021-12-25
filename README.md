@@ -5,33 +5,44 @@
 
 Telegram channel for elixir developers and other people who interested in Elixir-lang. The project is a scraper which parse different resources for further publication in the telegram channel.
 
-## Scraping resources
-  - [AppSignal](https://blog.appsignal.com/category/elixir.html)
-  - [AppUnite](https://appunite.com/blog/tag/elixir)
-  - [Bigargone](https://bigardone.dev/blog)
-  - [Carbon Five](https://blog.carbonfive.com/category/elixir/)
-  - [Changelog](https://changelog.com/topic/elixir/podcasts#feed)
-  - [Coletiv](https://www.coletiv.com/blog/category/elixir/)
-  - [Curiosum](https://curiosum.com/blog/category/elixir)
-  - [Dashbit](https://dashbit.co/blog)
-  - [DevTo](https://dev.to/t/elixir/latest)
-  - [Dockyard](https://dockyard.com/blog/categories/elixir)
-  - [Elixir Lang](https://elixir-lang.org/blog/)
-  - [Elixir Mix podcast](https://devchat.tv/elixir-mix/)
-  - [Elixir Wizards podcast](https://smartlogic.io/podcast/elixir-wizards/)
-  - [Erlang Solutions](https://www.erlang-solutions.com/blog/)
-  - [Fly.io](https://fly.io/blog/)
-  - [HashRocket](https://hashrocket.com/blog/tags/elixir)
-  - [PentaCent](https://pentacent.com/blog/)
-  - [Phoenix Framework](https://www.phoenixframework.org/blog)
-  - [Robots Thoughtbot](https://thoughtbot.com/blog/tags/elixir)
-  - [Sean Moriarity blog](https://seanmoriarity.com/)
-  - [Serokell](https://serokell.io/blog/elixir)
-  - [Smartlogic](https://smartlogic.io/blog/tag/elixir/)
-  - [Sophie DeBenedetto blog](https://www.thegreatcodeadventure.com/)
-  - [Sorentwo](https://sorentwo.com/blog/)
-  - [Thinking Elixir podcast](https://podcast.thinkingelixir.com/)
-  - [Today I Learned](https://til.hashrocket.com/elixir)
+## Companies blogs
+
+- [AppSignal](https://blog.appsignal.com/category/elixir.html)
+- [AppUnite](https://appunite.com/blog/tag/elixir)
+- [Carbon Five](https://blog.carbonfive.com/category/elixir/)
+- [Coletiv](https://www.coletiv.com/blog/category/elixir/)
+- [Curiosum](https://curiosum.com/blog/category/elixir)
+- [Dashbit](https://dashbit.co/blog)
+- [Dockyard](https://dockyard.com/blog/categories/elixir)
+- [Erlang Solutions](https://www.erlang-solutions.com/blog/)
+- [Fly.io](https://fly.io/blog/)
+- [HashRocket](https://hashrocket.com/blog/tags/elixir)
+- [Serokell](https://serokell.io/blog/elixir)
+- [Smartlogic](https://smartlogic.io/blog/tag/elixir/)
+- [Robots Thoughtbot](https://thoughtbot.com/blog/tags/elixir)
+
+## Personal blogs
+
+- [Bigargone](https://bigardone.dev/blog)
+- [Changelog](https://changelog.com/topic/elixir/podcasts#feed)
+- [Elixir Lang](https://elixir-lang.org/blog/)
+- [PentaCent](https://pentacent.com/blog/)
+- [Phoenix Framework](https://www.phoenixframework.org/blog)
+- [Sean Moriarity blog](https://seanmoriarity.com/)
+- [Sorentwo](https://sorentwo.com/blog/)
+- [StakNine](https://staknine.com/)
+- [Sophie DeBenedetto blog](https://www.thegreatcodeadventure.com/)
+- [Today I Learned](https://til.hashrocket.com/elixir)
+
+## Publishing platforms
+
+- [DevTo](https://dev.to/t/elixir/latest)
+
+## Podcasts
+
+- [Elixir Mix podcast](https://devchat.tv/elixir-mix/)
+- [Elixir Wizards podcast](https://smartlogic.io/podcast/elixir-wizards/)
+- [Thinking Elixir podcast](https://podcast.thinkingelixir.com/)
 
 ## Contributing
 
