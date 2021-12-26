@@ -24,7 +24,6 @@ Telegram channel for elixir developers and other people who interested in Elixir
 ## Personal blogs
 
 - [Bigargone](https://bigardone.dev/blog)
-- [Changelog](https://changelog.com/topic/elixir/podcasts#feed)
 - [Elixir Lang](https://elixir-lang.org/blog/)
 - [PentaCent](https://pentacent.com/blog/)
 - [Phoenix Framework](https://www.phoenixframework.org/blog)
@@ -40,6 +39,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
 
 ## Podcasts
 
+- [Changelog](https://changelog.com/topic/elixir/podcasts#feed)
 - [Elixir Mix podcast](https://devchat.tv/elixir-mix/)
 - [Elixir Wizards podcast](https://smartlogic.io/podcast/elixir-wizards/)
 - [Thinking Elixir podcast](https://podcast.thinkingelixir.com/)

@@ -1,6 +1,6 @@
-defmodule Scrapers.PersonalBlogs.Changelog do
+defmodule Scrapers.Podcasts.Changelog do
   @moduledoc """
-  Changelog.com scraper implementation.
+  Changelog.com elixir podcasts scraper implementation.
   """
   use Scrapers.Interface
 
