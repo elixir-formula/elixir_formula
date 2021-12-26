@@ -18,7 +18,7 @@ defmodule Scrapers.Podcasts.ElixirMix do
   def article_url(article) do
     url =
       article
-      |> Floki.find("h2.secondline-blog-title > a")
+      |> Floki.find("li > a")
       |> Floki.attribute("href")
       |> Floki.text()
 
