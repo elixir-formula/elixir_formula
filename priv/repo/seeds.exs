@@ -15,6 +15,13 @@ alias ElixirFormula.Monitoring.Schemas.ScraperStatus
 
 Repo.insert(
   %ScraperStatus{
+    source:"angelika.me"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "appsignal.com"
   },
   on_conflict: :nothing

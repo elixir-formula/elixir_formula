@@ -1,37 +1,34 @@
-defmodule Scrapers.CompaniesBlogs.FlyPhoenixFiles do
+defmodule Scrapers.PersonalBlogs.Angelika do
   @moduledoc """
-  Fly.io/phoenix-files/ scraper implementation.
+  Angelika.me scraper implementation.
   """
   use Scrapers.Interface
 
   # articles processing
 
   def resource,
-    do: "https://fly.io/phoenix-files/"
+    do: "https://angelika.me/blog/"
 
   def article_source,
-    do: "fly.io/phoenix-files"
+    do: "angelika.me"
 
   def articles_selector,
-    do: "article"
+    do: "article.post-preview"
 
   def article_url(article) do
     url =
       article
-      |> Floki.find("a")
+      |> Floki.find("h2 > a")
       |> Floki.attribute("href")
       |> Floki.text()
 
-    "https://fly.io" <> url
+    "https://angelika.me" <> url
   end
 
   # single article processing
 
-  def article_author(article) do
-    article
-    |> Floki.find("dl.text-sm > dd.text-navy")
-    |> Floki.text()
-    |> String.trim()
+  def article_author(_article) do
+    "Angelika Tyborska"
   end
 
   def article_image_url(article) do
@@ -55,7 +52,11 @@ defmodule Scrapers.CompaniesBlogs.FlyPhoenixFiles do
     |> Floki.text()
   end
 
-  def article_tags(_article) do
-    ["elixir", "phoenix"]
+  def article_tags(article) do
+    article
+    |> Floki.find("span.tags > a")
+    |> Floki.text(sep: ",")
+    |> String.downcase()
+    |> String.split(",")
   end
 end
