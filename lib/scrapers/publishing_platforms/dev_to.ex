@@ -29,9 +29,8 @@ defmodule Scrapers.PublishingPlatforms.DevTo do
 
   def article_author(article) do
     article
-    |> Floki.find("div.crayons-article__subheader > a")
+    |> Floki.find("span.crayons-subtitle-2")
     |> Floki.text()
-    |> String.trim()
   end
 
   def article_image_url(article) do
@@ -57,8 +56,9 @@ defmodule Scrapers.PublishingPlatforms.DevTo do
 
   def article_tags(article) do
     article
-    |> Floki.find("a.crayons-tag")
+    |> Floki.find("meta[name='keywords']")
+    |> Floki.attribute("content")
     |> Floki.text()
-    |> String.split("#", trim: true)
+    |> String.split(", ")
   end
 end
