@@ -9,6 +9,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
 
 - [AppSignal](https://blog.appsignal.com/category/elixir.html)
 - [AppUnite](https://appunite.com/blog/tag/elixir)
+- [Betterdoc.org](https://dev.betterdoc.org/)
 - [Carbon Five](https://blog.carbonfive.com/category/elixir/)
 - [Coletiv](https://www.coletiv.com/blog/category/elixir/)
 - [Curiosum](https://curiosum.com/blog/category/elixir)
@@ -24,6 +25,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
 
 ## Personal blogs
 
+- [Angelika Tyborska blog](https://angelika.me/blog/)
 - [Bigargone](https://bigardone.dev/blog)
 - [Elixir Lang](https://elixir-lang.org/blog/)
 - [PentaCent](https://pentacent.com/blog/)
