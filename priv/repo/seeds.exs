@@ -120,6 +120,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "fly.io/phoenix-files"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "hashrocket.com"
   },
   on_conflict: :nothing

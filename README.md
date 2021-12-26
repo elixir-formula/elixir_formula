@@ -15,6 +15,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
 - [Dashbit](https://dashbit.co/blog)
 - [Dockyard](https://dockyard.com/blog/categories/elixir)
 - [Erlang Solutions](https://www.erlang-solutions.com/blog/)
+- [Fly.io | The Phoenix Files](https://fly.io/phoenix-files/)
 - [Fly.io](https://fly.io/blog/)
 - [HashRocket](https://hashrocket.com/blog/tags/elixir)
 - [Serokell](https://serokell.io/blog/elixir)
