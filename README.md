@@ -45,6 +45,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
 - [Changelog](https://changelog.com/topic/elixir/podcasts#feed)
 - [Elixir Mix podcast](https://devchat.tv/elixir-mix/)
 - [Elixir Wizards podcast](https://smartlogic.io/podcast/elixir-wizards/)
+- [Elixir Outlaws podcast](https://elixiroutlaws.com/)
 - [Thinking Elixir podcast](https://podcast.thinkingelixir.com/)
 
 ## Contributing

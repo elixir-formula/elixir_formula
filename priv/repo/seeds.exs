@@ -106,6 +106,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "elixiroutlaws.com"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "elixir_mix"
   },
   on_conflict: :nothing
