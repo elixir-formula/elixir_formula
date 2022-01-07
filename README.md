@@ -42,6 +42,7 @@ Telegram channel for elixir developers and other people who interested in Elixir
 
 ## Podcasts
 
+- [Beam Radio](https://www.beamrad.io/)
 - [Changelog](https://changelog.com/topic/elixir/podcasts#feed)
 - [Elixir Mix podcast](https://devchat.tv/elixir-mix/)
 - [Elixir Wizards podcast](https://smartlogic.io/podcast/elixir-wizards/)

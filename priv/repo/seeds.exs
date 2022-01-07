@@ -36,6 +36,13 @@ Repo.insert(
 
 Repo.insert(
   %ScraperStatus{
+    source: "beamrad.io"
+  },
+  on_conflict: :nothing
+)
+
+Repo.insert(
+  %ScraperStatus{
     source: "betterdoc.org"
   },
   on_conflict: :nothing
