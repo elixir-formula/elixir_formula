@@ -16,6 +16,9 @@ defmodule ElixirFormula.Publications.Schemas.Publication do
     field :source, :string
     field :description, :string
     field :image_url, :string
+    field :message_id, :integer
+    field :like_usernames, {:array, :string}, default: []
+    field :dislike_usernames, {:array, :string}, default: []
 
     timestamps(type: :utc_datetime)
   end
@@ -29,6 +32,9 @@ defmodule ElixirFormula.Publications.Schemas.Publication do
     :status,
     :description,
     :image_url,
+    :message_id,
+    :like_usernames,
+    :dislike_usernames,
     :inserted_at
   ]
 

@@ -18,7 +18,7 @@ defmodule ElixirFormulaWeb.Monitoring.PublicationsLive.Index do
 
   def handle_event("publish", %{"id" => id}, socket) do
     with {:ok, publication} <- Publications.get_publication(:id, id),
-         {:ok, _message} <- Publications.publish_publication(publication) do
+         {:ok, _message} <- Publications.send_publication(publication) do
       {:noreply, assign_publications(socket)}
     end
   end
