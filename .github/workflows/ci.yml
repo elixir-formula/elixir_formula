@@ -10,6 +10,7 @@ env:
   OTP_VERSION: 23.2
   MIX_ENV: test
   TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/elixir_formula_test
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
 jobs:
   build:

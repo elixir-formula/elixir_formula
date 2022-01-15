@@ -1,5 +1,6 @@
 defmodule ElixirFormula.Publications.Services.UpdatePublication do
   @moduledoc false
+
   alias ElixirFormula.Publications.Schemas.Publication
   alias ElixirFormula.Repo
 

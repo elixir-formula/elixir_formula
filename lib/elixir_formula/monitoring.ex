@@ -33,7 +33,7 @@ defmodule ElixirFormula.Monitoring do
       iex> get_scraper_status(:id, 0)
       {:error, :scraper_status_not_found}
   """
-  @spec get_scraper_status(atom(), integer() | binary()) ::
+  @spec get_scraper_status(field :: atom(), value :: integer() | binary()) ::
           {:ok, ScraperStatus.t()} | {:error, :scraper_status_not_found}
   defdelegate get_scraper_status(field, value), to: GetScraperStatus, as: :call
 
@@ -48,6 +48,7 @@ defmodule ElixirFormula.Monitoring do
       iex> update_scraper_status("dev.to", :invalid)
       {:error, %Ecto.Changeset{}}
   """
-  @spec update_scraper_status(ScraperStatus.t(), map()) :: {:ok, ScraperStatus.t()} | {:error, Ecto.Changeset.t()}
+  @spec update_scraper_status(scraper_status :: ScraperStatus.t(), params :: map()) ::
+          {:ok, ScraperStatus.t()} | {:error, Ecto.Changeset.t()}
   defdelegate update_scraper_status(scraper_status, params), to: UpdateScraperStatus, as: :call
 end

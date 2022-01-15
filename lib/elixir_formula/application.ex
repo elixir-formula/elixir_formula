@@ -24,7 +24,9 @@ defmodule ElixirFormula.Application do
        name: ElixirFormula.Finch,
        pools: %{
          :default => [size: 10, count: 2]
-       }}
+       }},
+      # Start TelegramBot
+      TelegramBot
       # Start a worker by calling: ElixirFormula.Worker.start_link(arg)
       # {ElixirFormula.Worker, arg}
     ]
