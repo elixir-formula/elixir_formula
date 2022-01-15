@@ -29,7 +29,7 @@ defmodule ElixirFormula.Publications do
       iex> list_publications(%{status: :pending, page: 2})
       %Scrivener.Page{entries: [%Publication{status: "pernding"}, ...], page_number: 2, page_size: 10, total_entries: 15, total_pages: 2}
   """
-  @spec list_publications(map()) :: Scrivener.Page.t()
+  @spec list_publications(params :: map()) :: Scrivener.Page.t()
   defdelegate list_publications(params), to: GetPublicationsList, as: :call
 
   @doc """
@@ -43,11 +43,12 @@ defmodule ElixirFormula.Publications do
       iex> get_publication(:id, 0)
       {:error, :publication_not_found}
   """
-  @spec get_publication(atom(), integer() | binary()) :: {:ok, Publication.t()} | {:error, :publication_not_found}
+  @spec get_publication(field :: atom(), value :: integer() | binary()) ::
+          {:ok, Publication.t()} | {:error, :publication_not_found}
   defdelegate get_publication(field, value), to: GetPublication, as: :call
 
   @doc """
-  Creates a publication
+  Creates a publication.
 
   ## Parameters
 
@@ -81,11 +82,11 @@ defmodule ElixirFormula.Publications do
       iex> create_publication(%{})
       {:error, %Ecto.Changeset{}}
   """
-  @spec create_publication(map()) :: {:ok, Publication.t()} | {:ok, nil} | {:error, Ecto.Changeset.t()}
+  @spec create_publication(params :: map()) :: {:ok, Publication.t()} | {:ok, nil} | {:error, Ecto.Changeset.t()}
   defdelegate create_publication(params), to: CreatePublication, as: :call
 
   @doc """
-  Updates a publication
+  Updates a publication.
 
   ## Examples
 
@@ -95,14 +96,18 @@ defmodule ElixirFormula.Publications do
       iex> update_publication(publication, %{title: ""})
       {:error, %Ecto.Changeset{}}
   """
-  @spec update_publication(Publication.t(), map()) :: {:ok, Publication.t()} | {:error, Ecto.Changeset.t()}
+  @spec update_publication(publication :: Publication.t(), params :: map()) ::
+          {:ok, Publication.t()} | {:error, Ecto.Changeset.t()}
   defdelegate update_publication(publication, params), to: UpdatePublication, as: :call
 
   @doc """
-  Sends a publication
+  Sends a publication.
 
+  ## Examples
 
+      iex> send_publication(publication)
+      {:ok, %Nadia.Model.Message{}}
   """
-  @spec send_publication(Publication.t()) :: {:ok, Nadia.Model.Message.t()}
+  @spec send_publication(publication :: Publication.t()) :: {:ok, Nadia.Model.Message.t()}
   defdelegate send_publication(publication), to: SendPublication, as: :call
 end

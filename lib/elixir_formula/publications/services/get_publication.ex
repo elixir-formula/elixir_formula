@@ -24,4 +24,11 @@ defmodule ElixirFormula.Publications.Services.GetPublication do
       nil -> {:error, :publication_not_found}
     end
   end
+
+  def call(:message_id, message_id) do
+    case Repo.get_by(Publication, message_id: message_id) do
+      %Publication{} = publication -> {:ok, publication}
+      nil -> {:error, :publication_not_found}
+    end
+  end
 end

@@ -3,8 +3,8 @@ defmodule ElixirFormula.Repo.Migrations.AddLikesDislikesToPublications do
 
   def change do
     alter table(:publications) do
-      add :like_usernames, {:array, :string}, default: []
-      add :dislike_usernames, {:array, :string}, default: []
+      add :like_users, {:array, :integer}, default: []
+      add :dislike_users, {:array, :integer}, default: []
     end
   end
 end
