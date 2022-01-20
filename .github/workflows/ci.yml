@@ -88,6 +88,8 @@ jobs:
     name: Unit Tests Stage
     needs: build
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     services:
       postgres:
@@ -128,9 +130,8 @@ jobs:
             _build
           key: ${{ runner.os }}-${{ env.OTP_VERSION }}-${{ env.ELIXIR_VERISON }}-${{ hashFiles('mix.lock') }}
 
+      - name: Setup DB
+        run: mix ecto.setup
+
       - name: Run Tests
-        run: |
-          mix ecto.setup
-          mix coveralls.github
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+        run: mix coveralls.github

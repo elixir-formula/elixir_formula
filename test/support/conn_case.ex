@@ -23,12 +23,12 @@ defmodule ElixirFormulaWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import ElixirFormulaWeb.ConnCase
+      import ElixirFormula.Factory
+
       alias ElixirFormulaWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
       @endpoint ElixirFormulaWeb.Endpoint
-
-      import ElixirFormula.Factory
     end
   end
 
