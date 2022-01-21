@@ -15,7 +15,7 @@ defmodule ElixirFormula.Publications.Services.SendPublication do
   @spec call(Publication.t()) :: {:ok, Nadia.Model.Message.t()}
   def call(publication) do
     with message <- build_message(publication),
-         opts <- [parse_mode: "Markdown", reply_markup: reply_markup()],
+         opts <- [parse_mode: "HTML", reply_markup: reply_markup()],
          {:ok, %{message_id: message_id}} <- Nadia.send_message(telegram_channel_id(), message, opts) do
       UpdatePublication.call(publication, %{status: :published, message_id: message_id})
     end
@@ -25,7 +25,7 @@ defmodule ElixirFormula.Publications.Services.SendPublication do
     publication.tags
     |> Enum.reduce("", fn tag, acc -> "#{acc} ##{tag}" end)
     |> String.trim()
-    |> Kernel.<>("\n\n*#{publication.title}* \n\n#{publication.url}")
+    |> Kernel.<>("\n\n<b>#{publication.title}</b> \n\n#{publication.url}")
   end
 
   defp reply_markup do
