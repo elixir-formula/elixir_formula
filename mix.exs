@@ -67,7 +67,7 @@ defmodule ElixirFormula.MixProject do
       {:plug_cowboy, "~> 2.5.2"},
 
       # Database adapter
-      {:postgrex, "~> 0.15.13"},
+      {:postgrex, "~> 0.16.1"},
 
       # Pagination library
       {:scrivener_ecto, "~> 2.0"},
