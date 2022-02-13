@@ -22,7 +22,7 @@ defmodule Scrapers.Podcasts.ThinkingElixir do
       |> Floki.attribute("href")
       |> Floki.text()
 
-    "http://podcast.thinkingelixir.com" <> url
+    "https://podcast.thinkingelixir.com" <> url
   end
 
   # single article processing
