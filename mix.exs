@@ -73,7 +73,7 @@ defmodule ElixirFormula.MixProject do
       {:scrivener_ecto, "~> 2.0"},
 
       # Cron-like job scheduler
-      {:quantum, "~> 3.4.0"},
+      {:quantum, "~> 3.5.0"},
 
       # Telegram bot API wrapper
       {:nadia, "~> 0.7.0"},
