@@ -84,7 +84,7 @@ defmodule ElixirFormula.MixProject do
 
       # Testing tools
       {:ex_machina, "~> 2.7.0", only: :test},
-      {:excoveralls, "~> 0.14.4", only: :test},
+      {:excoveralls, "~> 0.15.0", only: :test},
       {:mock, "~> 0.3.7", only: :test},
 
       # Static code analysis
