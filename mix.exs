@@ -64,7 +64,7 @@ defmodule ElixirFormula.MixProject do
       {:finch, "~> 0.13.0"},
 
       # Web server
-      {:plug_cowboy, "~> 2.5.2"},
+      {:plug_cowboy, "~> 2.6.0"},
 
       # Database adapter
       {:postgrex, "~> 0.16.1"},
