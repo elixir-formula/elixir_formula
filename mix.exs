@@ -39,7 +39,7 @@ defmodule ElixirFormula.MixProject do
   defp deps do
     [
       # phoenix
-      {:phoenix, "~> 1.6.2"},
+      {:phoenix, "~> 1.7.0"},
       {:phoenix_ecto, "~> 4.4.0"},
       {:ecto_sql, "~> 3.7.1"},
       {:phoenix_live_view, "~> 0.17.5"},
