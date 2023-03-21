@@ -88,7 +88,7 @@ defmodule ElixirFormula.MixProject do
       {:mock, "~> 0.3.7", only: :test},
 
       # Static code analysis
-      {:credo, "~> 1.6.1", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.7.0", only: [:dev, :test], runtime: false}
     ]
   end
 
