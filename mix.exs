@@ -58,7 +58,7 @@ defmodule ElixirFormula.MixProject do
       {:jason, "~> 1.0"},
 
       # HTML parser
-      {:floki, "~> 0.34.0"},
+      {:floki, "~> 0.35.2"},
 
       # HTTP client
       {:finch, "~> 0.13.0"},
