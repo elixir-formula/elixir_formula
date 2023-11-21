@@ -41,7 +41,7 @@ defmodule ElixirFormula.MixProject do
       # phoenix
       {:phoenix, "~> 1.6.2"},
       {:phoenix_ecto, "~> 4.4.0"},
-      {:ecto_sql, "~> 3.7.1"},
+      {:ecto_sql, "~> 3.11.0"},
       {:phoenix_live_view, "~> 0.17.5"},
       {:phoenix_html, "~> 3.2.0"},
       {:phoenix_live_reload, "~> 1.4.0", only: :dev},
